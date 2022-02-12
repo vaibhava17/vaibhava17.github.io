@@ -1,0 +1,83 @@
+.bg-tools {
+  font-size: 750px;
+  right: 80px;
+  top: 85px;
+  color: var(--bg-secondary-color);
+  z-index: -1;
+}
+
+.bg-projects {
+  font-size: 765px;
+  right: 120px;
+  top: 70px;
+  color: var(--bg-secondary-color);
+  z-index: -1;
+}
+
+.bg-contact {
+  font-size: 765px;
+  right: 120px;
+  top: 70px;
+  color: var(--bg-secondary-color);
+  z-index: -1;
+}
+
+@media (max-width: 992px) {
+  .bg-tools {
+    font-size: 600px;
+    right: 40px;
+    top: 100px;
+  }
+
+  .bg-projects {
+    font-size: 600px;
+    right: 60px;
+    top: 70px;
+  }
+
+  .bg-contact {
+    font-size: 765px;
+    right: 40px;
+    top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-tools {
+    font-size: 450px;
+    right: 20px;
+    top: 200px;
+  }
+
+  .bg-projects {
+    font-size: 450px;
+    right: 20px;
+    top: 180px;
+  }
+
+  .bg-contact {
+    font-size: 765px;
+    right: 20px;
+    top: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-tools {
+    font-size: 250px;
+    right: 0px;
+    top: 100px;
+  }
+
+  .bg-projects {
+    font-size: 250px;
+    right: 0px;
+    top: 120px;
+  }
+
+  .bg-contact {
+    font-size: 250px;
+    right: 0px;
+    top: 70px;
+  }
+}

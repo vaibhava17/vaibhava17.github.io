@@ -1,0 +1,17 @@
+.textArea {
+  border-radius: 15px !important;
+}
+
+.input {
+  height: 40px;
+}
+
+.textArea::placeholder {
+  color: var(--bg-primary-color);
+  opacity: 1;
+}
+
+.input::placeholder {
+  color: var(--bg-primary-color);
+  opacity: 1;
+}

@@ -1,0 +1,72 @@
+@font-face {
+  font-family: futura-md;
+  src: url("./assets/fonts/futura-medium.ttf");
+}
+@font-face {
+  font-family: futura-lt;
+  src: url("./assets/fonts/futura-light.ttf");
+}
+@font-face {
+  font-family: futura-hv;
+  src: url("./assets/fonts/futura-heavy.ttf");
+}
+@font-face {
+  font-family: futura-bk;
+  src: url("./assets/fonts/futura-book.ttf");
+}
+
+:root {
+  --bg-primary-color: #1e1e1e;
+  --bg-secondary-color: #4a4a4a;
+  --font-primary-color: #ffffff;
+  --font-secondary-color: #a9a9a9;
+  --radius-lg: 30px;
+  --radius-sm: 15px;
+  --shadow: 0px 6px 10px -10px #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--font-primary-color);
+  font-family: futura-md;
+}
+
+#root {
+  background-color: var(--bg-primary-color);
+}
+
+.section {
+  height: 100vh;
+}
+
+.main-text {
+  font-family: futura-bk;
+  font-size: 28px;
+  max-width: 1024px;
+}
+
+@media (max-width: 768px) {
+  .main-text {
+    font-size: 22px;
+  }
+}
+
+.icons {
+  max-width: 1024px;
+}
+.icons i {
+  font-size: 60px;
+  color: var(--font-secondary-color);
+}
+
+.icons i:hover {
+  color: var(--font-primary-color);
+}
+
+.projects{
+  max-width: 1024px;
+}
+.contact-form{
+  max-width: 1024px;;
+}
