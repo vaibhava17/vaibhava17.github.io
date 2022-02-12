@@ -1,6 +1,6 @@
 {
-  "name": "va-website",
   "homepage": "http://vaibhava17.github.io/vaibhava17.github.io",
+  "name": "va-website",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -15,11 +15,11 @@
     "react-scripts": "5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "start": "set PORT=6969 && react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
