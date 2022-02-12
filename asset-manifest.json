@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/vaibhava17.github.io/static/css/main.2b3427c6.css",
-    "main.js": "/vaibhava17.github.io/static/js/main.56f39b5f.js",
-    "static/media/iconmedia.png": "/vaibhava17.github.io/static/media/iconmedia.cdf74d0e3d35ef4da24b.png",
-    "static/media/clubeventhandler.png": "/vaibhava17.github.io/static/media/clubeventhandler.ba8c5c75e6676ad3752e.png",
-    "static/media/manali.png": "/vaibhava17.github.io/static/media/manali.c61f9ecbb0173aff1f09.png",
-    "static/media/magicexport.png": "/vaibhava17.github.io/static/media/magicexport.1ba52d8f7838dd886e29.png",
-    "static/media/storiesarabia.png": "/vaibhava17.github.io/static/media/storiesarabia.5c550aa0ff4a0935c490.png",
-    "static/media/webpaage.png": "/vaibhava17.github.io/static/media/webpaage.a3a074514a30b41b94bb.png",
-    "static/media/futura-heavy.ttf": "/vaibhava17.github.io/static/media/futura-heavy.af72c25a6945b0f48abb.ttf",
-    "static/media/futura-medium.ttf": "/vaibhava17.github.io/static/media/futura-medium.4e762c29ef7b44ca51cb.ttf",
-    "static/media/futura-book.ttf": "/vaibhava17.github.io/static/media/futura-book.ed19af444f0976dbaf41.ttf",
-    "static/media/futura-light.ttf": "/vaibhava17.github.io/static/media/futura-light.ead7282f8edac7904e53.ttf",
-    "static/media/logo.svg": "/vaibhava17.github.io/static/media/logo.c1ff60daf8f67b50c3b7276eb6e35449.svg",
-    "index.html": "/vaibhava17.github.io/index.html",
-    "static/media/open.svg": "/vaibhava17.github.io/static/media/open.19f76ece83fe84dca4b97db28a6388e2.svg",
-    "static/media/close.svg": "/vaibhava17.github.io/static/media/close.df0ebf8bbb7922517c571a47690a58d2.svg",
-    "main.2b3427c6.css.map": "/vaibhava17.github.io/static/css/main.2b3427c6.css.map",
-    "main.56f39b5f.js.map": "/vaibhava17.github.io/static/js/main.56f39b5f.js.map"
+    "main.css": "/static/css/main.a762c7c4.css",
+    "main.js": "/static/js/main.226a7029.js",
+    "static/media/iconmedia.png": "/static/media/iconmedia.cdf74d0e3d35ef4da24b.png",
+    "static/media/clubeventhandler.png": "/static/media/clubeventhandler.ba8c5c75e6676ad3752e.png",
+    "static/media/manali.png": "/static/media/manali.c61f9ecbb0173aff1f09.png",
+    "static/media/magicexport.png": "/static/media/magicexport.1ba52d8f7838dd886e29.png",
+    "static/media/storiesarabia.png": "/static/media/storiesarabia.5c550aa0ff4a0935c490.png",
+    "static/media/webpaage.png": "/static/media/webpaage.a3a074514a30b41b94bb.png",
+    "static/media/futura-heavy.ttf": "/static/media/futura-heavy.af72c25a6945b0f48abb.ttf",
+    "static/media/futura-medium.ttf": "/static/media/futura-medium.4e762c29ef7b44ca51cb.ttf",
+    "static/media/futura-book.ttf": "/static/media/futura-book.ed19af444f0976dbaf41.ttf",
+    "static/media/futura-light.ttf": "/static/media/futura-light.ead7282f8edac7904e53.ttf",
+    "static/media/logo.svg": "/static/media/logo.c1ff60daf8f67b50c3b7276eb6e35449.svg",
+    "index.html": "/index.html",
+    "static/media/open.svg": "/static/media/open.19f76ece83fe84dca4b97db28a6388e2.svg",
+    "static/media/close.svg": "/static/media/close.df0ebf8bbb7922517c571a47690a58d2.svg",
+    "main.a762c7c4.css.map": "/static/css/main.a762c7c4.css.map",
+    "main.226a7029.js.map": "/static/js/main.226a7029.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b3427c6.css",
-    "static/js/main.56f39b5f.js"
+    "static/css/main.a762c7c4.css",
+    "static/js/main.226a7029.js"
   ]
 }
