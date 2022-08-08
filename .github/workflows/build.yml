@@ -9,9 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js version 14.x
+      - name: Install Nodejs
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
       - run: npm install
-      - run: npm run deploy
+      - name: Build 🏠
+        run: npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build

@@ -20,7 +20,7 @@ const Home = () => {
         <h1 className="text-light mb-md-5 mb-3">Vaibhav Agarwal</h1>
         <p className="main-text mb-md-5 mb-3">
           Hey! My name is Vaibhav Agarwal and I'm a India based Web Developer
-          with over 1 year of experience. I'm currently working with
+          with over 2+ year of experience (professional career, presonal projects freelancing). I'm currently working with
           <a
             href="https://www.gunisms.com.au/"
             target="_blank"
@@ -28,9 +28,9 @@ const Home = () => {
             className="fw-bold text-light"
           >
             {" "}
-            <u>Guni SMS</u>
+            <u>Guni</u>
           </a>
-          , Australia based company as a Frontend Developer.
+          , Australia as a Frontend Engineer.
         </p>
         <div className="d-none d-md-block">
           <Button

@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./carousel.module.css";
-import { Carousel } from "antd";
+import { Carousel, Spin } from "antd";
 
 function AppCarousel(props) {
   const { data } = props;
   return (
     <Carousel effect="fade" autoplay>
-      {data.map((item, index) => (
+      {data ? data.map((item, index) => (
         <div key={index} className="d-flex">
           <div
             style={{ backgroundImage: `url(${item.image})` }}
@@ -48,7 +48,9 @@ function AppCarousel(props) {
             </div>
           </div>
         </div>
-      ))}
+      )) : (
+        <Spin size="large" />
+      )}
     </Carousel>
   );
 }

@@ -10,23 +10,25 @@ const About = () => {
             <h3 className="text-light">Email</h3>
           </Col>
           <Col md={8}>
-            <p className="main-text mb-5">iamvaibhav.agarwal@gmail.com</p>
+            <a href="mailto:iamvaibhav.agarwal@gmail.com" target="_blank" >
+              <p className="main-text mb-5">iamvaibhav.agarwal@gmail.com</p>
+            </a>
           </Col>
           <Col md={4}>
             <h3 className="text-light">Qualification</h3>
           </Col>
           <Col md={8}>
-            <p className="main-text mb-5">Computer Science Engineer</p>
+            <p className="main-text mb-5">Bachelor of Technology in Computer Science</p>
           </Col>
           <Col md={4}>
-            <h3 className="text-light">Goals for 2022</h3>
+            <h3 className="text-light">Tech Expertise</h3>
           </Col>
           <Col md={8}>
             <div className="main-text mb-5">
               <ul className="fw-normal">
-                <li>Become a Full Stack Developer</li>
-                <li> Get a Full Time Job </li>
-                <li>Improve my skills in Python and Java</li>
+                <li>MERN Stack</li>
+                <li>Git/Github</li>
+                <li>POSTMAN</li>
               </ul>
             </div>
           </Col>
