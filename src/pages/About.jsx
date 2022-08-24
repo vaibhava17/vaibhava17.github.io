@@ -10,7 +10,7 @@ const About = () => {
             <h3 className="text-light">Email</h3>
           </Col>
           <Col md={8}>
-            <a href="mailto:iamvaibhav.agarwal@gmail.com" target="_blank" >
+            <a href="mailto:iamvaibhav.agarwal@gmail.com" target="_blank" rel="noreferrer" >
               <p className="main-text mb-5">iamvaibhav.agarwal@gmail.com</p>
             </a>
           </Col>
