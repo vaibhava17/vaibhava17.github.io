@@ -6,7 +6,6 @@ import "./responsive.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import "antd/dist/antd.css";
-require('dotenv').config();
 
 ReactDOM.render(
   <React.StrictMode>
