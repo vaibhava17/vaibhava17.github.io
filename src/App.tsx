@@ -1,15 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import AppButton from "./components/AppButton/AppButton";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [colorMode, setColorMode] = useState("light");
+
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      setColorMode(localStorage.getItem("theme") || "light");
+      document.documentElement.classList.add(
+        localStorage.getItem("theme") || "light"
+      );
+    }
+  }, [colorMode]);
+
+  function toggleColorMode() {
+    setColorMode(colorMode === "light" ? "dark" : "light");
+    if (colorMode === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+      <div className="flex flex-row">
+        <a href="https://vaibhavag.me" target="_blank">
+          <img src="/logo.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://reactjs.org" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -17,9 +38,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <AppButton
+          label={`Color Mode ${colorMode}`}
+          onClick={toggleColorMode}
+          color={colorMode === "light" ? "primary" : "secondary"}
+        />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -28,7 +51,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
