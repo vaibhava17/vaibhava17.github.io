@@ -13,6 +13,7 @@ type Props = {
     | "info"
     | "success"
     | "warning";
+  type?: "button" | "submit" | "reset";
 };
 
 const AppButton = (props: Props) => {
