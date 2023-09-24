@@ -37,10 +37,7 @@ export const DetailsData = [
     text: (
       <>
         Web Developer (Part Time)
-        <br />
-        <a href="https://webpaage.in/" className="text-light">
-          Webpaage Technologies
-        </a>
+        <br /> Webpaage Technologies
         <br /> Time: 09/2020 - 11/2021
       </>
     ),
@@ -59,27 +56,40 @@ export const DetailsData = [
   {
     text: (
       <>
-        Frontend Engineer (Full Time)
+        Software Development Engineer (Full Time)
         <br />
-        <a href="https://gunisms.com.au" className="text-light">
+        <a href="https://gunisms.com.au" target="_blank" className="text-light">
           Guni
         </a>
-        <br /> Time: 12/2021 - Present
+        <br /> Time: 12/2021 - 08/2023
       </>
     ),
-    color: "green",
+    color: "white",
   },
   {
     text: (
       <>
         Project Engineer (Internship)
         <br />
-        <a href="https://wipro.com" className="text-light">
+        <a href="https://wipro.com" target="_blank" className="text-light">
           Wipro Ltd
         </a>
         <br /> Time: 02/2022 - 04/2022
       </>
     ),
     color: "white",
+  },
+  {
+    text: (
+      <>
+        Software Development Engineer (Full Time)
+        <br />
+        <a href="https://talentxo.com" target="_blank" className="text-light">
+          Talent XO
+        </a>
+        <br /> Time: 09/2023 - Present
+      </>
+    ),
+    color: "green",
   },
 ];

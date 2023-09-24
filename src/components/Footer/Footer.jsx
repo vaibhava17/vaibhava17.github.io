@@ -16,7 +16,7 @@ function AppFooter({ url = "https://github.com/sponsors/vaibhava17?o=esb" }) {
             <a href="https://www.linkedin.com/in/vaibhava17/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin" />
             </a>
-            <a href="https://twitter.com/_vaibhava__" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/heyvybav" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter" />
             </a>
             <a href={url} target="_blank" rel="noopener noreferrer">
