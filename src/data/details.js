@@ -58,7 +58,7 @@ export const DetailsData = [
       <>
         Software Development Engineer (Full Time)
         <br />
-        <a href="https://gunisms.com.au" target="_blank" className="text-light">
+        <a href="https://gunisms.com.au" target="_blank" without rel="noreferrer" className="text-light">
           Guni
         </a>
         <br /> Time: 12/2021 - 08/2023
@@ -71,7 +71,7 @@ export const DetailsData = [
       <>
         Project Engineer (Internship)
         <br />
-        <a href="https://wipro.com" target="_blank" className="text-light">
+        <a href="https://wipro.com" target="_blank" without rel="noreferrer" className="text-light">
           Wipro Ltd
         </a>
         <br /> Time: 02/2022 - 04/2022
@@ -84,7 +84,7 @@ export const DetailsData = [
       <>
         Software Development Engineer (Full Time)
         <br />
-        <a href="https://talentxo.com" target="_blank" className="text-light">
+        <a href="https://talentxo.com" target="_blank" without rel="noreferrer" className="text-light">
           Talent XO
         </a>
         <br /> Time: 09/2023 - Present
