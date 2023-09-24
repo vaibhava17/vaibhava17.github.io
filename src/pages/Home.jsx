@@ -16,21 +16,21 @@ const Home = () => {
   return (
     <div className="section d-flex" id="home">
       <div className="my-auto p-md-5 p-3 me-md-5">
-        <h3 className="text-light">Web Developer</h3>
-        <h1 className="text-light mb-md-5 mb-3">Vaibhav Agarwal</h1>
+        <h1 className="text-light">Vaibhav Agarwal</h1>
+        <h3 className="text-light mb-md-5 mb-3">Software Development Engineer</h3>
         <p className="main-text mb-md-5 mb-3">
-          Hey! My name is Vaibhav Agarwal and I'm a India based Web Developer
-          with over 2+ year of experience (professional career, presonal projects freelancing). I'm currently working with
+          Hey! My name is Vaibhav Agarwal. Based in India 🇮🇳. <br />I am a SDE with over 2 years of experience in frontend development, specialising in React and modern web development techniques. <br />
+          I'm currently working with
           <a
-            href="https://www.gunisms.com.au/"
+            href="https://www.talentxo.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="fw-bold text-light"
           >
             {" "}
-            <u>Guni</u>
+            <u>Talent XO</u>
           </a>
-          , Australia as a Frontend Engineer.
+          .
         </p>
         <div className="d-none d-md-block">
           <Button
