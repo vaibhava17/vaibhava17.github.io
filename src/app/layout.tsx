@@ -1,5 +1,5 @@
 import Content from "@/content";
-import "./globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     canonical: Content.URL,
     types: {
       "application/atom+xml": [
-        { url: "blogs", title: "Blogs" },
-        { url: "projects", title: "Projects" },
+        { url: `${Content.URL}/blogs`, title: "Blogs" },
+        { url: `${Content.URL}/projects`, title: "Projects" },
       ],
     },
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: Content.APP_NAME,
     images: [
       {
-        url: Content.APP_LOGO_LIGHT,
+        url: `${Content.URL}/main.png`,
       },
     ],
   },
