@@ -1,9 +1,24 @@
 import Content from "@/content";
 import "../styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fira_Code } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const fira_code = Fira_Code({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  themeColor: [
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: Content.THEME_COLOR_PRIMARY_DARK,
+    },
+    {
+      media: "(prefers-color-scheme: light)",
+      color: Content.THEME_COLOR_PRIMARY_LIGHT,
+    },
+  ],
+  colorScheme: "light dark",
+};
 
 export const metadata: Metadata = {
   title: { default: Content.AUTHOR, template: "%s | Protfolio" },
@@ -16,18 +31,7 @@ export const metadata: Metadata = {
     url: Content.URL,
   },
   referrer: "origin-when-cross-origin",
-  themeColor: [
-    {
-      media: "(prefers-color-scheme: dark)",
-      color: Content.THEME_COLOR_PRIMARY_DARK,
-    },
-    {
-      media: "(prefers-color-scheme: light)",
-      color: Content.THEME_COLOR_PRIMARY_LIGHT,
-    },
-  ],
-  colorScheme: "light dark",
-  viewport: "width=device-width, initial-scale=1",
+  // viewport: "width=device-width, initial-scale=1",
   creator: Content.AUTHOR,
   publisher: "Github Pages",
   robots: "follow, index",
@@ -41,13 +45,13 @@ export const metadata: Metadata = {
     },
   },
   icons: [
-    { rel: "icon", url: Content.APP_LOGO_LIGHT },
+    { rel: "icon", url: `${Content.URL}/logo-light.svg` },
     {
       rel: "apple-touch-icon",
-      url: Content.APP_LOGO_LIGHT,
+      url: `${Content.URL}/logo-light.svg`,
     },
   ],
-  manifest: `${Content.URL}/manifest.json`,
+  // manifest: `${Content.URL}/manifest.json`,
   openGraph: {
     type: "website",
     url: Content.URL,

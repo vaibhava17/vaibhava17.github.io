@@ -1,7 +1,7 @@
 import { DarkLogo, LightLogo } from "../assets/images/logo";
 
 const Content = {
-  URL: "https://vaibhava17.githib.io",
+  URL: process.env.APP_URL,
   AUTHOR: "Vaibhav Agarwal",
   GITHUB: "https://github.com/vaibhava17",
   TWITTER: "https://twitter.com/heyvybav",

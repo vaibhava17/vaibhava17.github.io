@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --text: #000000;
   --text-dim: #858585;
@@ -13,7 +9,7 @@
   --primary-gradient: linear-gradient(120deg, var(--primary), var(--accent))
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --text: #ffffff;
     --text-dim: #858585;
@@ -24,11 +20,12 @@
     --accent: #be8b55;
     --primary-gradient: linear-gradient(120deg, var(--primary), var(--accent))
   }
-}
+} */
 
 body {
-  color: rgb(var(--text));
+  color: var(--text);
   background: linear-gradient(to bottom,
       transparent,
       var(--background)) var(--background-dim);
+  min-height: 100vh;
 }

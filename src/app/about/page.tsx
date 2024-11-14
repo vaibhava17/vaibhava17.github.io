@@ -1,9 +1,10 @@
-import React from 'react'
+import type { Metadata } from "next";
 
-const About = () => {
-  return (
-    <div>About</div>
-  )
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "about",
+  };
 }
-
-export default About
+export default function About() {
+  return <main>hello about</main>;
+}
