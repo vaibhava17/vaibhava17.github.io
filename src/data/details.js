@@ -18,7 +18,7 @@ export const DetailsData = [
       <>
         Diploma
         <br /> Jawaher Lal Nehru Polytechnic
-        <br /> Year of Passing: 2017
+        <br /> Year of Passing: 2018
       </>
     ),
     color: "white",
@@ -87,7 +87,20 @@ export const DetailsData = [
         <a href="https://talentxo.com" target="_blank" without rel="noreferrer" className="text-light">
           Talent XO
         </a>
-        <br /> Time: 09/2023 - Present
+        <br /> Time: 09/2023 - 01/2025
+      </>
+    ),
+    color: "white",
+  },
+  {
+    text: (
+      <>
+        Software Development Engineer 2 (Full Time)
+        <br />
+        <a href="https://solfin.co.in" target="_blank" without rel="noreferrer" className="text-light">
+          Solfin
+        </a>
+        <br /> Time: 01/2025 - Present
       </>
     ),
     color: "green",
