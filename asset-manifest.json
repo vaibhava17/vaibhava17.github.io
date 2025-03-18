@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.74004e2a.css",
-    "main.js": "/static/js/main.bc1edf99.js",
+    "main.js": "/static/js/main.272091d3.js",
     "static/media/iconmedia.png": "/static/media/iconmedia.cdf74d0e3d35ef4da24b.png",
     "static/media/clubeventhandler.png": "/static/media/clubeventhandler.ba8c5c75e6676ad3752e.png",
     "static/media/manali.png": "/static/media/manali.c61f9ecbb0173aff1f09.png",
@@ -17,10 +17,10 @@
     "static/media/open.svg": "/static/media/open.3d64114191e022726956638206e4927e.svg",
     "static/media/close.svg": "/static/media/close.e019a3f03b799a2f81994715d66d4ae3.svg",
     "main.74004e2a.css.map": "/static/css/main.74004e2a.css.map",
-    "main.bc1edf99.js.map": "/static/js/main.bc1edf99.js.map"
+    "main.272091d3.js.map": "/static/js/main.272091d3.js.map"
   },
   "entrypoints": [
     "static/css/main.74004e2a.css",
-    "static/js/main.bc1edf99.js"
+    "static/js/main.272091d3.js"
   ]
 }
