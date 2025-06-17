@@ -1,75 +1,90 @@
-import Content from "../content/content";
-import "../styles/globals.css";
-import { Fira_Code } from "next/font/google";
+// src/app/layout.js
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "../components/ui/theme-provider";
+import { cn } from "../lib/utils";
 
-const fira_code = Fira_Code({ subsets: ["latin"] });
-
-export const viewport = {
-  themeColor: [
-    {
-      media: "(prefers-color-scheme: dark)",
-      color: Content.THEME_COLOR_PRIMARY_DARK,
-    },
-    {
-      media: "(prefers-color-scheme: light)",
-      color: Content.THEME_COLOR_PRIMARY_LIGHT,
-    },
-  ],
-  colorScheme: "light dark",
-};
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata = {
-  title: { default: Content.AUTHOR, template: "%s | Protfolio" },
-  description: Content.APP_DESCRIPTION,
-  applicationName: Content.APP_NAME,
-  generator: "Next.js",
-  keywords: Content.APP_KEYWORDS,
-  authors: {
-    name: Content.AUTHOR,
-    url: Content.URL,
-  },
-  referrer: "origin-when-cross-origin",
-  // viewport: "width=device-width, initial-scale=1",
-  creator: Content.AUTHOR,
-  publisher: "Github Pages",
-  robots: "follow, index",
-  alternates: {
-    canonical: Content.URL,
-    types: {
-      "application/atom+xml": [
-        { url: `${Content.URL}/blogs`, title: "Blogs" },
-        { url: `${Content.URL}/projects`, title: "Projects" },
-      ],
-    },
-  },
-  icons: [
-    { rel: "icon", url: `${Content.URL}/logo-light.svg` },
-    {
-      rel: "apple-touch-icon",
-      url: `${Content.URL}/logo-light.svg`,
-    },
+  title: "Vaibhav Agarwal - Software Development Engineer",
+  description:
+    "Passionate software engineer specializing in React, Python, and modern web technologies. Building scalable applications with LLM integrations.",
+  keywords: [
+    "Software Engineer",
+    "React Developer",
+    "Frontend Developer",
+    "Full Stack Developer",
+    "JavaScript",
+    "Python",
+    "Next.js",
   ],
-  // manifest: `${Content.URL}/manifest.json`,
+  authors: [{ name: "Vaibhav Agarwal" }],
+  creator: "Vaibhav Agarwal",
   openGraph: {
     type: "website",
-    url: Content.URL,
-    title: Content.AUTHOR,
-    description: Content.APP_DESCRIPTION,
-    siteName: Content.APP_NAME,
+    locale: "en_US",
+    url: "https://vaibhava17.github.io",
+    title: "Vaibhav Agarwal - Software Development Engineer",
+    description:
+      "Passionate software engineer specializing in React, Python, and modern web technologies.",
+    siteName: "Vaibhav Agarwal Portfolio",
     images: [
       {
-        url: `${Content.URL}/main.png`,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Vaibhav Agarwal - Software Development Engineer",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vaibhav Agarwal - Software Development Engineer",
+    description:
+      "Passionate software engineer specializing in React, Python, and modern web technologies.",
+    creator: "@heyvybav",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  }
 };
 
-export default function RootLayout({
-  children,
-}) {
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={fira_code.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

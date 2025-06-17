@@ -1,12 +1,11 @@
-import Content from "../content/content";
-
+// src/app/robots.js
 export default function robots() {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
+      disallow: "/api/",
     },
-    sitemap: `${Content.URL}/sitemap.xml`,
+    sitemap: "https://vaibhava17.github.io/sitemap.xml",
   };
 }

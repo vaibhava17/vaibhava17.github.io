@@ -1,33 +1,35 @@
 {
-  "name": "vaibhava17",
-  "version": "2.0.1",
+  "name": "vaibhav-portfolio",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix-lint": "./node_modules/.bin/prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "autoprefixer": "10.4.16",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.18.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.516.0",
-    "next": "14.1.4",
-    "prettier": "^3.0.3",
-    "react": "^18",
-    "react-bootstrap": "^2.10.2",
-    "react-dom": "^18",
-    "shadcn": "^2.6.4",
-    "tailwind": "^4.0.0"
+    "next": "15.3.3",
+    "nodemailer": "^7.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.16.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.1.4"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }
