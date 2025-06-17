@@ -19,16 +19,16 @@ const Home = () => {
         <h1 className="text-light">Vaibhav Agarwal</h1>
         <h3 className="text-light mb-md-5 mb-3">Software Development Engineer</h3>
         <p className="main-text mb-md-5 mb-3">
-          Hey! My name is Vaibhav Agarwal. Based in India 🇮🇳. <br />I am a SDE with over 2 years of experience in frontend development, specialising in React and modern web development techniques. <br />
+          Hey! My name is Vaibhav Agarwal. Based in India 🇮🇳. <br />I am a SDE 2 with over 3 years of experience in frontend development, specialising in React and modern web development techniques. <br />
           I'm currently working with
           <a
-            href="https://www.talentxo.com/"
+            href="https://www.solfin.co.in/"
             target="_blank"
             rel="noopener noreferrer"
             className="fw-bold text-light"
           >
             {" "}
-            <u>Talent XO</u>
+            <u>Solfin</u>
           </a>
           .
         </p>
