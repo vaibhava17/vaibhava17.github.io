@@ -1,12 +1,10 @@
-import Content from "@/content";
+import Content from "../content/content";
 import "../styles/globals.css";
-import type { Metadata, Viewport } from "next";
 import { Fira_Code } from "next/font/google";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const fira_code = Fira_Code({ subsets: ["latin"] });
 
-export const viewport: Viewport = {
+export const viewport = {
   themeColor: [
     {
       media: "(prefers-color-scheme: dark)",
@@ -20,7 +18,7 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-export const metadata: Metadata = {
+export const metadata = {
   title: { default: Content.AUTHOR, template: "%s | Protfolio" },
   description: Content.APP_DESCRIPTION,
   applicationName: Content.APP_NAME,
@@ -68,8 +66,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
   return (
     <html lang="en">

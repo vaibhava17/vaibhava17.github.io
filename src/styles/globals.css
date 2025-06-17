@@ -9,19 +9,6 @@
   --primary-gradient: linear-gradient(120deg, var(--primary), var(--accent))
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --text: #ffffff;
-    --text-dim: #858585;
-    --background: #000000;
-    --background-dim: #1d1d1d;
-    --primary: #6e2c2b;
-    --secondary: #282828;
-    --accent: #be8b55;
-    --primary-gradient: linear-gradient(120deg, var(--primary), var(--accent))
-  }
-} */
-
 body {
   color: var(--text);
   background: linear-gradient(to bottom,

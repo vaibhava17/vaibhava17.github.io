@@ -1,7 +1,6 @@
-import Content from "@/content";
-import { MetadataRoute } from "next";
+import Content from "../content/content";
 
-export default function robots(): MetadataRoute.Robots {
+export default function robots() {
   return {
     rules: {
       userAgent: "*",

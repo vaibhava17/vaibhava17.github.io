@@ -1,7 +1,6 @@
-import Content from '@/content'
-import { MetadataRoute } from 'next'
+import Content from '../content/content';
 
-export default function manifest(): MetadataRoute.Manifest {
+export default function manifest() {
   return {
     name: Content.APP_NAME,
     short_name: Content.APP_NAME,
