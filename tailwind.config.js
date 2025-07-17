@@ -1,25 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+const defaultConfig = require("tailwindcss/defaultConfig")
+
 module.exports = {
   darkMode: ["class"],
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
+    ...defaultConfig.theme,
     extend: {
       colors: {
+        "neon-orange": "#FF6F1F",
+        "neon-blue": "#00F0FF",
+        "neon-green": "#39FF14",
+        "neon-red": "#FF2E63",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -54,104 +51,32 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        mono: ["JetBrains Mono", "monospace"],
+      },
+      animation: {
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        glow: "glow 2s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        glow: {
+          "0%": {
+            textShadow: "0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor",
+          },
+          "100%": {
+            textShadow: "0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor",
+          },
+        },
+      },
+      backdropBlur: {
+        xs: "2px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-        "fade-in": {
-          "0%": { opacity: 0, transform: "translateY(20px)" },
-          "100%": { opacity: 1, transform: "translateY(0)" },
-        },
-        "slide-in-left": {
-          "0%": { opacity: 0, transform: "translateX(-50px)" },
-          "100%": { opacity: 1, transform: "translateX(0)" },
-        },
-        "slide-in-right": {
-          "0%": { opacity: 0, transform: "translateX(50px)" },
-          "100%": { opacity: 1, transform: "translateX(0)" },
-        },
-        "scale-in": {
-          "0%": { opacity: 0, transform: "scale(0.8)" },
-          "100%": { opacity: 1, transform: "scale(1)" },
-        },
-        "gradient-shift": {
-          "0%, 100%": { "background-position": "0% 50%" },
-          "50%": { "background-position": "100% 50%" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "pulse-slow": {
-          "0%, 100%": { opacity: 1 },
-          "50%": { opacity: 0.5 },
-        },
-        "spin-slow": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
-        "bounce-slow": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-5px)" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "slide-in-left": "slide-in-left 0.6s ease-out",
-        "slide-in-right": "slide-in-right 0.6s ease-out",
-        "scale-in": "scale-in 0.6s ease-out",
-        "gradient-shift": "gradient-shift 3s ease infinite",
-        float: "float 3s ease-in-out infinite",
-        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
-        "spin-slow": "spin-slow 8s linear infinite",
-        "bounce-slow": "bounce-slow 2s ease-in-out infinite",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      spacing: {
-        18: "4.5rem",
-        88: "22rem",
-        128: "32rem",
-        144: "36rem",
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: "none",
-            color: "hsl(var(--foreground))",
-            hr: {
-              borderColor: "hsl(var(--border))",
-            },
-            "h1, h2, h3, h4": {
-              color: "hsl(var(--foreground))",
-            },
-            code: {
-              color: "hsl(var(--foreground))",
-            },
-            "blockquote p:first-of-type::before": false,
-            "blockquote p:last-of-type::after": false,
-          },
-        },
-      },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [require("tailwindcss-animate")],
+}

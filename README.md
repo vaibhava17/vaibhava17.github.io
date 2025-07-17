@@ -1,5 +1,30 @@
-**[vaibhavag.me](https://vaibhava17.github.io)**
+# Cyberpunk portfolio website
 
-<br>
+*Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-<samp>code is licensed under <a href='./LICENSE'>MIT</a>,<br> words and images are licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC BY-NC-SA 4.0</a></samp>.
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/IIRlwPdaaPJ)
+
+## Overview
+
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+
+## Deployment
+
+Your project is live at:
+
+**[https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)**
+
+## Build your app
+
+Continue building your app on:
+
+**[https://v0.dev/chat/projects/IIRlwPdaaPJ](https://v0.dev/chat/projects/IIRlwPdaaPJ)**
+
+## How It Works
+
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository
