@@ -1,0 +1,1254 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 9046
+>>
+stream
+0.200025 w
+0 G
+0.06 0.08 0.12 rg
+0. 792. 612. -96. re
+f
+BT
+/F2 22 Tf
+25.2999999999999972 TL
+1. g
+40. 752. Td
+(Vaibhav Agarwal) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.91 0.639 0.239 rg
+40. 734. Td
+(Software Development Engineer II @ Solfin & builder of Hortiprise) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.929 0.937 0.918 rg
+40. 716. Td
+(iamvaibhav.agarwal@gmail.com   ·   github.com/vaibhava17   ·   www.linkedin.com/in/vaibhava17   ·   Gurugram / Delhi NCR, India) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.063 0.078 0.122 rg
+40. 666.3999999999999773 Td
+(Software Development Engineer with hands-on experience building production SaaS platforms, autonomous AI workflows, and) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.063 0.078 0.122 rg
+40. 653.3999999999999773 Td
+(developer tooling. Creator of Hortiprise \(a complete agricultural nursery SaaS with AI OCR invoice digitization and WhatsApp) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.063 0.078 0.122 rg
+40. 640.3999999999999773 Td
+(workflows\), DiffCommit AI \(published VS Code extension across 9 AI providers\), Syntra \(local-first RAG with git-diff incremental) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.063 0.078 0.122 rg
+40. 627.3999999999999773 Td
+(indexing\), and deterministic AI pipelines.) Tj
+ET
+0.91 0.64 0.24 rg
+40. 612. 7. -7. re
+f
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.063 0.078 0.122 rg
+53. 605. Td
+(EXPERIENCE) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+40. 596. m
+572. 596. l
+S
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.063 0.078 0.122 rg
+40. 575.2000000000000455 Td
+(Solfin) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.357 0.38 0.412 rg
+79.710000000000008 575.2000000000000455 Td
+(Software Development Engineer II) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 562. Td
+(Jan 2025 — Present   ·   Gurugram, India) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 547.7999999999999545 Td
+(•  Architected and owned the frontend for Commercial & Industrial \(CNI\) and Supply Chain Finance \(SCF\) solar loan journeys,) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 535.6000000000000227 Td
+(streamlining end-to-end workflows from application through credit underwriting to disbursement.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 523.4000000000000909 Td
+(•  Engineered an AI document intelligence service with a structured RAG pipeline for bill extraction.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 511.2000000000000455 Td
+(•  Optimized LLM inference and document pipelines while supporting 8,000–10,000 weekly calls at under 1% failure rate.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 499.0000000000000568 Td
+(•  Built a unified, multi-provider LLM service layer routing across Google Gemini, AWS Bedrock, and OpenAI for internal chatbots and) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 486.8000000000000682 Td
+(business services.) Tj
+ET
+BT
+/F1 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 473.0000000000000568 Td
+(bill extraction accuracy:  ) Tj
+ET
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+0.651 0.294 0.255 rg
+132.6499999999999773 473.0000000000000568 Td
+(70%) Tj
+ET
+0.65 0.29 0.25 RG
+0.7 w
+132.6499999999999773 475.9750000000000796 m
+149.5649999999999693 475.9750000000000796 l
+S
+BT
+/F1 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+157.5649999999999693 473.0000000000000568 Td
+(->) Tj
+ET
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+0.247 0.561 0.373 rg
+173.2999999999999545 473.0000000000000568 Td
+(90%) Tj
+ET
+BT
+/F1 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 460.0000000000000568 Td
+(avg. LLM response latency:  ) Tj
+ET
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+0.651 0.294 0.255 rg
+148.1200000000000045 460.0000000000000568 Td
+(20s) Tj
+ET
+0.65 0.29 0.25 RG
+0.7 w
+148.1200000000000045 462.9750000000000796 m
+162.1450000000000102 462.9750000000000796 l
+S
+BT
+/F1 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+170.1450000000000102 460.0000000000000568 Td
+(->) Tj
+ET
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+0.247 0.561 0.373 rg
+185.8799999999999955 460.0000000000000568 Td
+(7s) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.063 0.078 0.122 rg
+40. 435.0000000000000568 Td
+(Hortiprise) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.357 0.38 0.412 rg
+101.0500000000000114 435.0000000000000568 Td
+(Lead Engineer \(Side Project\)) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 421.8000000000000682 Td
+(2025 — Present   ·   Gurugram, India) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 407.6000000000000796 Td
+(•  Founded and architected Hortiprise, a nursery-management SaaS digitizing end-to-end horticulture operations: plant inventory,) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 395.4000000000000909 Td
+(sowing batches, germination tracking, quotations, billing, sales, and dispatch.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 383.2000000000001023 Td
+(•  Engineered a multimodal document pipeline \(Google Cloud Vision + Tesseract + LLMs\) to extract structured data from messy) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 371.0000000000001137 Td
+(real-world Indian invoices.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 358.8000000000001251 Td
+(•  Built RAG-powered nursery intelligence tools for plant health analysis, document analysis, and demand forecasting.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 346.6000000000001364 Td
+(•  Integrated interactive WhatsApp-based ordering and automated dispatch confirmations, no dedicated app required.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.063 0.078 0.122 rg
+40. 322.8000000000001251 Td
+(TalentXO) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.357 0.38 0.412 rg
+96.4300000000000068 322.8000000000001251 Td
+(Software Development Engineer I) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 309.6000000000001364 Td
+(Sept 2023 — Dec 2024   ·   Remote / Bangalore, India) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 295.4000000000001478 Td
+(•  Developed and maintained candidate search and indexing infrastructure on Apache Solr, indexing high-volume candidate profiles) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 283.2000000000001592 Td
+(and recruitment metadata to power complex recruiter filtering.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 271.0000000000001137 Td
+(•  Architected a recruiter lead-generation and attribution engine with token-based link tracking, connecting inbound applications back to) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 258.8000000000000682 Td
+(originating recruiters as actionable leads.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 246.6000000000000227 Td
+(•  Optimized background processing and recurring overnight data pipelines generating recruiter analytics, improving throughput and) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 234.3999999999999773 Td
+(reliability.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 222.1999999999999318 Td
+(•  Delivered end-to-end full-stack features, database schema migrations, and rapid production bug triaging.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.063 0.078 0.122 rg
+40. 198.3999999999999773 Td
+(Guni SMS) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.357 0.38 0.412 rg
+101.0500000000000114 198.3999999999999773 Td
+(Frontend & Mobile Engineer) Tj
+ET
+BT
+/F3 8.5 Tf
+9.7749999999999986 TL
+0.357 0.38 0.412 rg
+40. 185.1999999999999318 Td
+(Dec 2021 — Sept 2023   ·   Remote / Sydney, Australia) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 170.9999999999998863 Td
+(•  Built and maintained the React web platform for an Australian enterprise SMS gateway — campaign creation, messaging) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 158.7999999999998408 Td
+(broadcasts, and contact lifecycle management.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 146.5999999999997954 Td
+(•  Spearheaded the core dashboard modernization from V1 to V2, redesigning UI architecture into reusable React components and) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 134.3999999999997499 Td
+(pages.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 122.1999999999997044 Td
+(•  Engineered responsive, mobile-optimized interfaces across the messaging suite.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 109.9999999999996589 Td
+(•  Collaborated with backend engineers on automated two-way messaging workflows triggered by real-time replies and scheduled) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.063 0.078 0.122 rg
+40. 97.7999999999996135 Td
+(campaigns.) Tj
+ET
+0.87 0.87 0.85 RG
+0.5 w
+40. 28. m
+572. 28. l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.357 0.38 0.412 rg
+40. 17. Td
+(vaibhava17.github.io) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.357 0.38 0.412 rg
+557.4500000000000455 17. Td
+(1 / 2) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 10332
+>>
+stream
+0.7 w
+0.65 0.29 0.25 RG
+0.91 0.64 0.24 rg
+40. 752. 7. -7. re
+f
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.063 0.078 0.122 rg
+53. 745. Td
+(SKILLS) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+40. 736. m
+572. 736. l
+S
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+40. 724. 140. -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+45. 711.7749999999999773 Td
+(Category) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+180. 724. 392. -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+185. 711.7749999999999773 Td
+(Skills) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 704.2250000000000227 140. -39.5999999999999943 re
+B
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 691.4249999999999545 Td
+(AI, LLMs & agentic systems) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+180. 704.2250000000000227 392. -39.5999999999999943 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.357 0.38 0.412 rg
+186. 691.4249999999999545 Td
+(Multi-provider LLM orchestration, Structured RAG & document intelligence, Vector databases \(Qdrant\),) Tj
+T* (Multimodal vision & OCR, Autonomous AI agents & workflows, Deterministic AI pipelines, Conversational AI) Tj
+T* (& internal chatbots, Prompt engineering & structured outputs, Local LLMs & offline inference) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+40. 664.625 140. -48.7999999999999972 re
+B
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 651.8250000000000455 Td
+(Backend engineering & data) Tj
+T* (systems) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+180. 664.625 392. -48.7999999999999972 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.357 0.38 0.412 rg
+186. 651.8250000000000455 Td
+(Python \(FastAPI, Pydantic v2, Pytest\), TypeScript / Node.js, Relational databases \(PostgreSQL, MySQL\),) Tj
+T* (Search & indexing \(Apache Solr\), Prisma ORM & data modeling, Document databases \(MongoDB\),) Tj
+T* (In-memory caching & queues \(Redis\), Resource-aware schedulers & background ETL, Automated testing) Tj
+T* (\(Pytest, Jest\)) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 615.8250000000000455 140. -30.3999999999999986 re
+B
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 603.0249999999999773 Td
+(Frontend & UI architecture) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+180. 615.8250000000000455 392. -30.3999999999999986 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.357 0.38 0.412 rg
+186. 603.0249999999999773 Td
+(Next.js \(App Router, server components\), React & component systems, TypeScript, Tailwind CSS & modern) Tj
+T* (UI, State management & optimistic UI, Mobile-responsive web design, Framer Motion) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+40. 585.4249999999999545 140. -30.3999999999999986 re
+B
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 572.625 Td
+(Cloud, DevOps & production) Tj
+T* (monitoring) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+180. 585.4249999999999545 392. -30.3999999999999986 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.357 0.38 0.412 rg
+186. 572.625 Td
+(Docker & containerization, Production infrastructure monitoring, Cloud platforms \(AWS Bedrock, GCP\),) Tj
+T* (Linux administration & shell scripting, GitHub Actions CI/CD, Third-party messaging APIs) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 555.0249999999999773 140. -30.3999999999999986 re
+B
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 542.2249999999999091 Td
+(Mobile & developer tooling) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+180. 555.0249999999999773 392. -30.3999999999999986 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.357 0.38 0.412 rg
+186. 542.2249999999999091 Td
+(React Native / Expo, VS Code extension API & SecretStorage, Git internals & diffs, Flutter & Dart, Appium) Tj
+T* (UI automation) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.78 G
+0. w
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.91 0.64 0.24 rg
+40. 496.625 7. -7. re
+f
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.063 0.078 0.122 rg
+53. 489.625 Td
+(EDUCATION) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+40. 480.625 m
+572. 480.625 l
+S
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+40. 468.625 188.1173380035025957 -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+45. 456.3999999999999773 Td
+(School) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+228.1173380035025957 468.625 183.8826619964973759 -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+233.1173380035025957 456.3999999999999773 Td
+(Degree) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+412. 468.625 90. -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+417. 456.3999999999999773 Td
+(Period) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+502. 468.625 70. -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+507. 456.3999999999999773 Td
+(Grade) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 448.8500000000000227 188.1173380035025957 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 436.0500000000000114 Td
+(IIT Mandi) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+228.1173380035025957 448.8500000000000227 183.8826619964973759 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+234.1173380035025957 436.0500000000000114 Td
+(Minor in CSE, Computer Science & Engineering) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+412. 448.8500000000000227 90. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+418. 436.0500000000000114 Td
+(2024 — 2026) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+502. 448.8500000000000227 70. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+508. 436.0500000000000114 Td
+(7.0 CGPA) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+40. 427.6500000000000341 188.1173380035025957 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 414.8500000000000227 Td
+(Shri Siddhi Vinayak Group of Institutions, Bareilly) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+228.1173380035025957 427.6500000000000341 183.8826619964973759 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+234.1173380035025957 414.8500000000000227 Td
+(B.Tech, Computer Science & Engineering) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+412. 427.6500000000000341 90. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+418. 414.8500000000000227 Td
+(2019 — 2023) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+502. 427.6500000000000341 70. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+508. 414.8500000000000227 Td
+(8.2 CGPA) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.78 G
+0. w
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.91 0.64 0.24 rg
+40. 378.4500000000000455 7. -7. re
+f
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.063 0.078 0.122 rg
+53. 371.4500000000000455 Td
+(CERTIFICATIONS) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+40. 362.4500000000000455 m
+572. 362.4500000000000455 l
+S
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+40. 350.4500000000000455 283.1273885350318551 -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+45. 338.2250000000000227 Td
+(Title) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+323.1273885350318551 350.4500000000000455 178.8726114649681165 -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+328.1273885350318551 338.2250000000000227 Td
+(Issuer) Tj
+ET
+0.06 0.08 0.12 rg
+0.78 G
+0. w
+0.06 0.08 0.12 rg
+502. 350.4500000000000455 70. -19.7749999999999986 re
+f
+BT
+/F2 8.5 Tf
+9.7749999999999986 TL
+1. g
+507. 338.2250000000000227 Td
+(Year) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 330.6750000000000682 283.1273885350318551 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 317.8750000000000568 Td
+(Project Engineer Internship) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+323.1273885350318551 330.6750000000000682 178.8726114649681165 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+329.1273885350318551 317.8750000000000568 Td
+(Wipro Ltd.) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+502. 330.6750000000000682 70. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+508. 317.8750000000000568 Td
+(2022) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+40. 309.4750000000000796 283.1273885350318551 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 296.6750000000000682 Td
+(Node.js Developer Course) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+323.1273885350318551 309.4750000000000796 178.8726114649681165 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+329.1273885350318551 296.6750000000000682 Td
+(Udemy) Tj
+ET
+1. g
+0.87 0.87 0.85 RG
+0.5 w
+1. g
+502. 309.4750000000000796 70. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+508. 296.6750000000000682 Td
+(2022) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+40. 288.2750000000000909 283.1273885350318551 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+46. 275.4750000000001364 Td
+(Django Using Python) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+323.1273885350318551 288.2750000000000909 178.8726114649681165 -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+329.1273885350318551 275.4750000000001364 Td
+(CETPA Infotech) Tj
+ET
+0.96 0.97 0.96 rg
+0.87 0.87 0.85 RG
+0.5 w
+0.96 0.97 0.96 rg
+502. 288.2750000000000909 70. -21.1999999999999993 re
+B
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.063 0.078 0.122 rg
+508. 275.4750000000001364 Td
+(2020) Tj
+ET
+0.87 0.87 0.85 RG
+0.75 w
+0.78 G
+0. w
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.75 w
+0.87 0.87 0.85 RG
+0.5 w
+40. 28. m
+572. 28. l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.357 0.38 0.412 rg
+40. 17. Td
+(vaibhava17.github.io) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.357 0.38 0.412 rg
+557.4500000000000455 17. Td
+(2 / 2) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260928164107+05'30')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000019708 00000 n 
+0000021533 00000 n 
+0000000015 00000 n 
+0000000120 00000 n 
+0000009218 00000 n 
+0000009323 00000 n 
+0000019771 00000 n 
+0000019896 00000 n 
+0000020026 00000 n 
+0000020159 00000 n 
+0000020297 00000 n 
+0000020421 00000 n 
+0000020550 00000 n 
+0000020682 00000 n 
+0000020818 00000 n 
+0000020946 00000 n 
+0000021073 00000 n 
+0000021202 00000 n 
+0000021335 00000 n 
+0000021437 00000 n 
+0000021783 00000 n 
+0000021869 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <7EEA502A756B13ADBB06F7949109CAA4> <7EEA502A756B13ADBB06F7949109CAA4> ]
+>>
+startxref
+21973
+%%EOF

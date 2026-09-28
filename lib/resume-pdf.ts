@@ -67,9 +67,9 @@ export async function buildResumePdf(): Promise<Uint8Array> {
     y += h
   }
 
-  function sectionHeading(label: string) {
+  function sectionHeading(label: string, minNextSpace = 20) {
     spacer(10)
-    checkPage(20)
+    checkPage(minNextSpace)
     doc.setFillColor(...AMBER)
     doc.rect(MARGIN, y, 7, 7, "F")
     doc.setFont("helvetica", "bold")
@@ -173,7 +173,7 @@ export async function buildResumePdf(): Promise<Uint8Array> {
   })
 
   // ---- Skills (table) ----
-  sectionHeading("Skills")
+  sectionHeading("Skills", 80)
   autoTable(doc, {
     startY: y,
     margin: { left: MARGIN, right: MARGIN },
