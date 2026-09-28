@@ -1,784 +1,442 @@
 "use client"
 
-import type React from "react"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, Phone, X } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import {
-  Terminal,
-  User,
-  Briefcase,
-  Code,
-  Settings,
-  Bell,
-  RotateCcw,
-  ChevronRight,
-  Menu,
-  X,
-  ChevronDown,
-} from "lucide-react"
+const NAV_LINKS = [
+  { id: "work", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "contact", label: "Contact" },
+]
 
-interface Command {
-  command: string
-  description: string
-  action: () => void
+const STATS = [
+  { value: "3+", label: "Years in production" },
+  { value: "15+", label: "Projects shipped" },
+  { value: "3", label: "Companies" },
+  { value: "70%", label: "Manual work automated away" },
+]
+
+const EXPERIENCE = [
+  {
+    company: "Solfin",
+    role: "Software Development Engineer II",
+    period: "Jan 2025 — Present",
+    current: true,
+    achievements: [
+      "Developed scalable UI components in React used across the core product",
+      "Built and fine-tuned an internal LLM wrapper for document workflows",
+      "Automated document processing, cutting manual effort by 70%",
+      "Optimized LLM prompts and system integration for reliability and cost",
+    ],
+  },
+  {
+    company: "TalentXO",
+    role: "Software Development Engineer I",
+    period: "Sept 2023 — Dec 2024",
+    current: false,
+    achievements: [
+      "Improved application performance by 30%",
+      "Cut third-party integration time by 40%",
+      "Held 99.9% uptime on production services",
+      "Reduced post-deployment issues by 95%",
+    ],
+  },
+  {
+    company: "Guni SMS",
+    role: "Frontend Engineer",
+    period: "Dec 2021 — Sept 2023",
+    current: false,
+    achievements: [
+      "Improved user engagement by 20%",
+      "Cut integration time by 30%",
+      "Led a team of 4 developers",
+      "Reduced pre-release issues by 70%",
+    ],
+  },
+]
+
+const PROJECTS = [
+  {
+    name: "Talent Partner Dashboard",
+    url: "https://talentxo.com",
+    description: "Recruitment management system for partner agencies to source, track, and place candidates.",
+    tags: ["React", "Node.js", "MongoDB"],
+  },
+  {
+    name: "Guni SMS Platform",
+    url: "https://app.gunisms.com.au",
+    description: "SMS campaign management and analytics platform for business messaging at scale.",
+    tags: ["React", "Redux", "Express"],
+  },
+  {
+    name: "Magic Exports",
+    url: "https://magicexports.in",
+    description: "Business management system for an export operation — catalogue, orders, and clients.",
+    tags: ["Next.js", "Tailwind"],
+  },
+  {
+    name: "Motoworld",
+    url: "https://manaliladakhmotoworld.com/",
+    description: "Marketing and booking site for a motorcycle rental and tourism business.",
+    tags: ["Next.js", "TypeScript"],
+  },
+  {
+    name: "Club Events Handler",
+    url: "https://intense-shelf-96174.herokuapp.com/",
+    description: "Event management system for college club activities — registrations and scheduling.",
+    tags: ["Node.js", "MySQL"],
+  },
+]
+
+const SKILLS = [
+  {
+    name: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Redux", "Tailwind CSS", "HTML", "CSS"],
+  },
+  {
+    name: "Backend",
+    items: ["Node.js", "Python", "FastAPI", "Flask", "Express.js", "MongoDB", "MySQL", "JWT"],
+  },
+  {
+    name: "Tools",
+    items: ["Git", "AWS", "Google Cloud", "Docker", "JIRA", "Postman", "VS Code", "Linux"],
+  },
+]
+
+const EDUCATION = [
+  {
+    title: "Minor in Computer Science & Engineering",
+    place: "Indian Institute of Technology Mandi",
+    period: "Sept 2024 — Present",
+  },
+  {
+    title: "B.Tech, Computer Science",
+    place: "Shri Siddhi Vinayak Group of Institutions",
+    period: "Graduated 2022",
+  },
+]
+
+const CERTIFICATIONS = [
+  { title: "Project Engineer", place: "Wipro Ltd.", year: "2022" },
+  { title: "Node.js Developer", place: "Udemy", year: "2022" },
+  { title: "Django Python", place: "CETPA Infotech", year: "2020" },
+]
+
+const CONTACT_LINKS = [
+  { label: "Email", value: "iamvaibhav.agarwal@gmail.com", href: "mailto:iamvaibhav.agarwal@gmail.com", icon: Mail },
+  { label: "LinkedIn", value: "linkedin.com/in/vaibhava17", href: "https://linkedin.com/in/vaibhava17", icon: Linkedin },
+  { label: "GitHub", value: "github.com/vaibhava17", href: "https://github.com/vaibhava17", icon: Github },
+  { label: "Phone", value: "+91 82798 75697", href: "tel:+918279875697", icon: Phone },
+]
+
+function fadeUp(delay = 0) {
+  return {
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-80px" },
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+  }
 }
 
-interface Agent {
-  id: string
-  codename: string
-  status: "active" | "offline" | "training"
-  mission?: string
-}
-
-export default function TacticalCLIPortfolio() {
-  const [currentView, setCurrentView] = useState("overview")
-  const [commandHistory, setCommandHistory] = useState<string[]>([])
-  const [currentCommand, setCurrentCommand] = useState("")
-  const [uptime, setUptime] = useState(0)
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [cliOpen, setCLIOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  const [agents] = useState<Agent[]>([
-    { id: "V-001A", codename: "VAIBHAV PRIME", status: "active", mission: "Full Stack Operations" },
-    { id: "V-002R", codename: "REACT SPECIALIST", status: "active", mission: "Frontend Deployment" },
-    { id: "V-003P", codename: "PYTHON OPERATIVE", status: "active", mission: "Backend Systems" },
-    { id: "V-004N", codename: "NODE GUARDIAN", status: "training", mission: "API Development" },
-    { id: "V-005D", codename: "DATABASE SENTINEL", status: "active", mission: "Data Operations" },
-  ])
-
-  const terminalRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  // Check if mobile on mount and resize
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-      if (window.innerWidth >= 768) {
-        setSidebarOpen(false)
-        setCLIOpen(false)
-      }
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
-
-  const commands: Command[] = [
-    { command: "help", description: "Show available commands", action: () => showHelp() },
-    { command: "overview", description: "Show tactical overview", action: () => setCurrentView("overview") },
-    { command: "profile", description: "Display agent profile", action: () => setCurrentView("profile") },
-    { command: "missions", description: "List completed missions", action: () => setCurrentView("missions") },
-    { command: "projects", description: "Show project codex", action: () => setCurrentView("projects") },
-    { command: "skills", description: "Display tactical arsenal", action: () => setCurrentView("skills") },
-    { command: "contact", description: "Open communication channels", action: () => setCurrentView("contact") },
-    { command: "clear", description: "Clear terminal output", action: () => setCommandHistory([]) },
-    { command: "status", description: "System status report", action: () => showStatus() },
-    { command: "mobile", description: "Toggle mobile CLI", action: () => setCLIOpen(!cliOpen) },
-  ]
+export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setUptime((prev) => prev + 1)
-    }, 1000)
-    return () => clearInterval(interval)
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const formatUptime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600)
-    const minutes = Math.floor((seconds % 3600) / 60)
-    const secs = seconds % 60
-    return `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`
-  }
-
-  const executeCommand = (cmd: string) => {
-    const trimmedCmd = cmd.trim().toLowerCase()
-    const command = commands.find((c) => c.command === trimmedCmd)
-
-    setCommandHistory((prev) => [...prev, `> ${cmd}`])
-
-    if (command) {
-      command.action()
-      if (isMobile && trimmedCmd !== "clear" && trimmedCmd !== "status" && trimmedCmd !== "help") {
-        setCLIOpen(false)
-      }
-    } else if (trimmedCmd) {
-      setCommandHistory((prev) => [...prev, `Command not found: ${trimmedCmd}. Type 'help' for available commands.`])
-    }
-
-    setCurrentCommand("")
-  }
-
-  const showHelp = () => {
-    const helpText = [
-      "TACTICAL COMMAND SYSTEM - AVAILABLE OPERATIONS:",
-      "",
-      ...commands.map((cmd) => `  ${cmd.command.padEnd(12)} - ${cmd.description}`),
-      "",
-      "Use arrow keys for command history. Type command and press ENTER to execute.",
-    ]
-    setCommandHistory((prev) => [...prev, ...helpText])
-  }
-
-  const showStatus = () => {
-    const statusText = [
-      "SYSTEM STATUS REPORT:",
-      `  Uptime: ${formatUptime(uptime)}`,
-      `  Active Agents: ${agents.filter((a) => a.status === "active").length}`,
-      `  Missions: 23 ONGOING`,
-      `  System Health: OPTIMAL`,
-      `  Security Level: MAXIMUM`,
-    ]
-    setCommandHistory((prev) => [...prev, ...statusText])
-  }
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      executeCommand(currentCommand)
-    }
-  }
-
-  const navItems = [
-    { id: "overview", label: "COMMAND CENTER", icon: Terminal, active: true },
-    { id: "profile", label: "AGENT NETWORK", icon: User },
-    { id: "missions", label: "OPERATIONS", icon: Briefcase },
-    { id: "projects", label: "INTELLIGENCE", icon: Code },
-    { id: "skills", label: "SYSTEMS", icon: Settings },
-  ]
-
-  const handleNavClick = (viewId: string) => {
-    setCurrentView(viewId)
-    if (isMobile) {
-      setSidebarOpen(false)
-    }
+  const scrollTo = (id: string) => {
+    setMenuOpen(false)
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-300 font-mono flex relative">
-      {/* Mobile Sidebar Overlay */}
-      <AnimatePresence>
-        {sidebarOpen && isMobile && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-40 md:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Sidebar */}
-      <motion.div
-        initial={false}
-        animate={{
-          x: isMobile && !sidebarOpen ? "-100%" : "0%",
-        }}
-        className={`${
-          isMobile ? "fixed left-0 top-0 h-full w-80 z-50" : "w-80"
-        } bg-gray-800 border-r border-gray-700 flex flex-col`}
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Nav */}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors ${
+          scrolled ? "border-b border-border bg-background/80 backdrop-blur-md" : "border-b border-transparent"
+        }`}
       >
-        {/* Header */}
-        <div className="p-4 border-b border-gray-700 flex items-center justify-between">
-          <div>
-            <div className="text-orange-500 font-bold text-lg mb-1">TACTICAL OPS</div>
-            <div className="text-gray-400 text-sm">v2.1.7 CLASSIFIED</div>
-          </div>
-          {isMobile && (
-            <button onClick={() => setSidebarOpen(false)} className="p-2 hover:bg-gray-700 rounded">
-              <X size={20} />
-            </button>
-          )}
-        </div>
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <button onClick={() => scrollTo("top")} className="text-sm font-semibold tracking-tight">
+            Vaibhav Agarwal
+          </button>
 
-        {/* Navigation */}
-        <div className="p-4 flex-1">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              className={`w-full flex items-center gap-3 p-3 mb-2 rounded transition-all touch-manipulation ${
-                currentView === item.id
-                  ? "bg-orange-500 text-black font-bold"
-                  : "text-gray-400 hover:text-white hover:bg-gray-700 active:bg-gray-600"
-              }`}
-            >
-              <item.icon size={20} />
-              <span className="text-sm md:text-base">{item.label}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* System Status */}
-        <div className="p-4 border-t border-gray-700 bg-gray-800">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-green-400 font-bold text-sm">SYSTEM ONLINE</span>
-          </div>
-          <div className="text-xs space-y-1">
-            <div>UPTIME: {formatUptime(uptime)}</div>
-            <div>AGENTS: {agents.filter((a) => a.status === "active").length} ACTIVE</div>
-            <div>MISSIONS: 23 ONGOING</div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen">
-        {/* Top Bar */}
-        <div className="bg-gray-800 border-b border-gray-700 p-3 md:p-4 flex items-center justify-between">
-          <div className="flex items-center gap-2 md:gap-4">
-            {isMobile && (
+          <nav className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
               <button
-                onClick={() => setSidebarOpen(true)}
-                className="p-2 hover:bg-gray-700 rounded mr-2 touch-manipulation"
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                <Menu size={20} />
+                {link.label}
               </button>
-            )}
-            <span className="text-gray-400 text-sm md:text-base">TACTICAL COMMAND /</span>
-            <span className="text-orange-500 font-bold text-sm md:text-base">{currentView.toUpperCase()}</span>
-          </div>
-          <div className="flex items-center gap-2 md:gap-4">
-            <span className="text-gray-400 text-xs md:text-sm hidden sm:block">
-              LAST UPDATE:{" "}
-              {new Date().toLocaleString("en-GB", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                timeZone: "UTC",
-              })}{" "}
-              UTC
-            </span>
-            {isMobile && (
-              <button onClick={() => setCLIOpen(true)} className="p-2 hover:bg-gray-700 rounded touch-manipulation">
-                <Terminal size={20} className="text-orange-500" />
-              </button>
-            )}
-            <Bell size={16} className="text-gray-400 hidden md:block" />
-            <RotateCcw size={16} className="text-gray-400 hidden md:block" />
-          </div>
-        </div>
+            ))}
+          </nav>
 
-        {/* Content Area */}
-        <div className="flex-1 flex">
-          {/* Main View */}
-          <div className="flex-1 p-3 md:p-6 overflow-y-auto">
-            <AnimatePresence mode="wait">
-              {currentView === "overview" && <OverviewView agents={agents} />}
-              {currentView === "profile" && <ProfileView />}
-              {currentView === "missions" && <MissionsView />}
-              {currentView === "projects" && <ProjectsView />}
-              {currentView === "skills" && <SkillsView />}
-              {currentView === "contact" && <ContactView />}
-            </AnimatePresence>
-          </div>
-
-          {/* Desktop CLI Terminal */}
-          {!isMobile && (
-            <div className="w-96 bg-black border-l border-gray-700 flex flex-col">
-              <div className="p-3 border-b border-gray-700 bg-gray-800">
-                <div className="flex items-center gap-2">
-                  <Terminal size={16} className="text-orange-500" />
-                  <span className="text-orange-500 font-bold">TACTICAL CLI</span>
-                </div>
-              </div>
-
-              <div
-                ref={terminalRef}
-                className="flex-1 p-3 overflow-y-auto text-sm"
-                style={{ maxHeight: "calc(100vh - 200px)" }}
-              >
-                <div className="text-green-400 mb-2">
-                  TACTICAL COMMAND SYSTEM v2.1.7
-                  <br />
-                  Type 'help' for available commands.
-                </div>
-
-                {commandHistory.map((line, index) => (
-                  <div key={index} className={line.startsWith(">") ? "text-orange-500" : "text-gray-300"}>
-                    {line}
-                  </div>
-                ))}
-              </div>
-
-              <div className="p-3 border-t border-gray-700 bg-gray-800">
-                <div className="flex items-center gap-2">
-                  <span className="text-orange-500 text-sm">tactical@ops:~$</span>
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={currentCommand}
-                    onChange={(e) => setCurrentCommand(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    className="flex-1 bg-transparent text-green-400 outline-none text-sm"
-                    placeholder="Enter command..."
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Mobile CLI Modal */}
-      <AnimatePresence>
-        {cliOpen && isMobile && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-50"
-              onClick={() => setCLIOpen(false)}
-            />
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: "0%" }}
-              exit={{ y: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 500 }}
-              className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-700 z-50 max-h-[70vh] flex flex-col"
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border md:hidden"
+              aria-label="Toggle menu"
             >
-              {/* CLI Header */}
-              <div className="p-4 border-b border-gray-700 bg-gray-800 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Terminal size={16} className="text-orange-500" />
-                  <span className="text-orange-500 font-bold">TACTICAL CLI</span>
-                </div>
-                <button onClick={() => setCLIOpen(false)} className="p-2 hover:bg-gray-700 rounded touch-manipulation">
-                  <ChevronDown size={20} />
+              {menuOpen ? <X size={16} /> : <Menu size={16} />}
+            </button>
+          </div>
+        </div>
+
+        {menuOpen && (
+          <div className="border-t border-border bg-background px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-4">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollTo(link.id)}
+                  className="text-left text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
                 </button>
-              </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
 
-              {/* CLI Content */}
-              <div className="flex-1 p-4 overflow-y-auto text-sm">
-                <div className="text-green-400 mb-2">
-                  TACTICAL COMMAND SYSTEM v2.1.7
-                  <br />
-                  Type 'help' for available commands.
+      <main id="top">
+        {/* Hero */}
+        <section className="mx-auto flex max-w-5xl flex-col px-6 pb-24 pt-40 md:pt-48">
+          <motion.p {...fadeUp(0)} className="mb-6 text-sm font-medium text-muted-foreground">
+            Software Engineer II · Solfin
+          </motion.p>
+
+          <motion.h1
+            {...fadeUp(0.05)}
+            className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl"
+          >
+            I build software that ships, scales, and runs without babysitting.
+          </motion.h1>
+
+          <motion.p {...fadeUp(0.1)} className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
+            Three years shipping full-stack products in React, Node, and Python — from recruitment platforms to
+            LLM-backed automation that cut manual work by 70%.
+          </motion.p>
+
+          <motion.div {...fadeUp(0.15)} className="mt-10 flex flex-wrap items-center gap-4">
+            <button
+              onClick={() => scrollTo("work")}
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+            >
+              See the work
+              <ArrowRight size={15} />
+            </button>
+            <button
+              onClick={() => scrollTo("contact")}
+              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-foreground/30"
+            >
+              Get in touch
+            </button>
+          </motion.div>
+        </section>
+
+        {/* Stats */}
+        <section className="border-y border-border">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 px-6 py-16 md:grid-cols-4">
+            {STATS.map((stat, i) => (
+              <motion.div key={stat.label} {...fadeUp(i * 0.05)}>
+                <div className="text-3xl font-semibold tracking-tight md:text-4xl">{stat.value}</div>
+                <div className="mt-2 text-sm text-muted-foreground">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section id="experience" className="mx-auto max-w-5xl px-6 py-24">
+          <motion.div {...fadeUp(0)} className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Experience</h2>
+          </motion.div>
+
+          <div className="flex flex-col divide-y divide-border">
+            {EXPERIENCE.map((job, i) => (
+              <motion.div key={job.company} {...fadeUp(i * 0.05)} className="grid gap-4 py-8 md:grid-cols-[1fr_2fr]">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-semibold">{job.company}</h3>
+                    {job.current && (
+                      <span className="rounded-full bg-foreground/5 px-2 py-0.5 text-xs font-medium text-muted-foreground">
+                        Current
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">{job.role}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{job.period}</p>
                 </div>
+                <ul className="space-y-2">
+                  {job.achievements.map((achievement) => (
+                    <li key={achievement} className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-muted-foreground" />
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
-                {commandHistory.map((line, index) => (
-                  <div key={index} className={line.startsWith(">") ? "text-orange-500" : "text-gray-300"}>
-                    {line}
+        {/* Work */}
+        <section id="work" className="border-t border-border bg-secondary/40">
+          <div className="mx-auto max-w-5xl px-6 py-24">
+            <motion.div {...fadeUp(0)} className="mb-12">
+              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Selected work</h2>
+            </motion.div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {PROJECTS.map((project, i) => (
+                <motion.a
+                  key={project.name}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...fadeUp((i % 2) * 0.05)}
+                  className="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition-colors hover:border-foreground/30"
+                >
+                  <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-base font-semibold">{project.name}</h3>
+                      <ArrowUpRight
+                        size={18}
+                        className="flex-shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm text-muted-foreground">{project.description}</p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-secondary px-2.5 py-1 text-xs text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="mx-auto max-w-5xl px-6 py-24">
+          <motion.div {...fadeUp(0)} className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Skills</h2>
+          </motion.div>
+
+          <div className="grid gap-10 md:grid-cols-3">
+            {SKILLS.map((group, i) => (
+              <motion.div key={group.name} {...fadeUp(i * 0.05)}>
+                <h3 className="mb-4 text-sm font-semibold">{group.name}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-border px-3 py-1.5 text-sm text-muted-foreground"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Education & Certifications */}
+        <section className="border-t border-border bg-secondary/40">
+          <div className="mx-auto grid max-w-5xl gap-16 px-6 py-24 md:grid-cols-2">
+            <motion.div {...fadeUp(0)}>
+              <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">Education</h2>
+              <div className="space-y-6">
+                {EDUCATION.map((item) => (
+                  <div key={item.title}>
+                    <div className="font-semibold">{item.title}</div>
+                    <div className="mt-1 text-sm text-muted-foreground">{item.place}</div>
+                    <div className="text-sm text-muted-foreground">{item.period}</div>
                   </div>
                 ))}
-              </div>
-
-              {/* CLI Input */}
-              <div className="p-4 border-t border-gray-700 bg-gray-800">
-                <div className="flex items-center gap-2">
-                  <span className="text-orange-500 text-sm">tactical@ops:~$</span>
-                  <input
-                    type="text"
-                    value={currentCommand}
-                    onChange={(e) => setCurrentCommand(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    className="flex-1 bg-transparent text-green-400 outline-none text-sm"
-                    placeholder="Enter command..."
-                    autoFocus
-                  />
-                </div>
               </div>
             </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+
+            <motion.div {...fadeUp(0.05)}>
+              <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+                Certifications
+              </h2>
+              <div className="space-y-6">
+                {CERTIFICATIONS.map((item) => (
+                  <div key={item.title}>
+                    <div className="font-semibold">{item.title}</div>
+                    <div className="mt-1 text-sm text-muted-foreground">
+                      {item.place} · {item.year}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="mx-auto max-w-5xl px-6 py-24">
+          <motion.div {...fadeUp(0)} className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Let's build something.</h2>
+            <p className="mt-4 text-muted-foreground">
+              Open to full-stack roles and interesting freelance work. Reach out through any of the channels below.
+            </p>
+          </motion.div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            {CONTACT_LINKS.map((link, i) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                {...fadeUp(i * 0.05)}
+                className="group flex items-center gap-4 rounded-2xl border border-border p-5 transition-colors hover:border-foreground/30"
+              >
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondary">
+                  <link.icon size={16} />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-medium">{link.label}</div>
+                  <div className="truncate text-sm text-muted-foreground">{link.value}</div>
+                </div>
+                <ArrowUpRight
+                  size={16}
+                  className="ml-auto flex-shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </motion.a>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground sm:flex-row">
+          <span>© {new Date().getFullYear()} Vaibhav Agarwal</span>
+          <span>Built with Next.js & Tailwind CSS</span>
+        </div>
+      </footer>
     </div>
-  )
-}
-
-function OverviewView({ agents }: { agents: Agent[] }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4 md:space-y-6"
-    >
-      {/* Agent Allocation */}
-      <div className="bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700">
-        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">AGENT ALLOCATION</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 mb-6 md:mb-8">
-          <div className="text-center p-4 bg-gray-700 rounded">
-            <div className="text-2xl md:text-4xl font-bold text-white mb-2">3</div>
-            <div className="text-gray-400 text-sm md:text-base">Active Field</div>
-          </div>
-          <div className="text-center p-4 bg-gray-700 rounded">
-            <div className="text-2xl md:text-4xl font-bold text-white mb-2">15</div>
-            <div className="text-gray-400 text-sm md:text-base">Projects</div>
-          </div>
-          <div className="text-center p-4 bg-gray-700 rounded">
-            <div className="text-2xl md:text-4xl font-bold text-white mb-2">5</div>
-            <div className="text-gray-400 text-sm md:text-base">Technologies</div>
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          {agents.map((agent) => (
-            <div key={agent.id} className="flex items-center gap-3 md:gap-4 p-3 bg-gray-700 rounded">
-              <div
-                className={`w-3 h-3 rounded-full flex-shrink-0 ${
-                  agent.status === "active"
-                    ? "bg-green-400"
-                    : agent.status === "training"
-                      ? "bg-orange-500"
-                      : "bg-red-500"
-                }`}
-              />
-              <div className="flex-1 min-w-0">
-                <div className="font-bold text-sm md:text-base">{agent.id}</div>
-                <div className="text-gray-400 text-xs md:text-sm truncate">{agent.codename}</div>
-              </div>
-              {agent.mission && <div className="text-xs md:text-sm text-gray-400 hidden sm:block">{agent.mission}</div>}
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
-function ProfileView() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4 md:space-y-6"
-    >
-      <div className="bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700">
-        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">AGENT PROFILE</h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-          <div>
-            <h3 className="text-orange-500 font-bold mb-3 text-sm md:text-base">PERSONAL DATA</h3>
-            <div className="space-y-2 text-xs md:text-sm">
-              <div>
-                <span className="text-gray-400">NAME:</span> VAIBHAV AGARWAL
-              </div>
-              <div>
-                <span className="text-gray-400">DESIGNATION:</span> SOFTWARE ENGINEER
-              </div>
-              <div>
-                <span className="text-gray-400">CONTACT:</span> +91 8279875697
-              </div>
-              <div className="break-all">
-                <span className="text-gray-400">EMAIL:</span> iamvaibhav.agarwal@gmail.com
-              </div>
-              <div>
-                <span className="text-gray-400">CLEARANCE:</span> FULL STACK
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-orange-500 font-bold mb-3 text-sm md:text-base">EDUCATION</h3>
-            <div className="space-y-3 text-xs md:text-sm">
-              <div>
-                <div className="font-bold">B. Tech. Computer Science</div>
-                <div className="text-gray-400">Shri Siddhi Vinayak Group Of Institutions</div>
-                <div className="text-gray-400">Graduated 2022</div>
-              </div>
-              <div>
-                <div className="font-bold">Minor in CSE</div>
-                <div className="text-gray-400">Indian Institute of Technology Mandi</div>
-                <div className="text-gray-400">Sept 2024 - Present</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6">
-          <h3 className="text-orange-500 font-bold mb-3 text-sm md:text-base">CERTIFICATIONS</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs md:text-sm">
-            <div className="bg-gray-700 p-3 rounded">
-              <div className="font-bold">Project Engineer</div>
-              <div className="text-gray-400">Wipro Ltd. (2022)</div>
-            </div>
-            <div className="bg-gray-700 p-3 rounded">
-              <div className="font-bold">Node.js Developer</div>
-              <div className="text-gray-400">Udemy (2022)</div>
-            </div>
-            <div className="bg-gray-700 p-3 rounded">
-              <div className="font-bold">Django Python</div>
-              <div className="text-gray-400">CETPA Infotech (2020)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
-function MissionsView() {
-  const missions = [
-    {
-      company: "SOLFIN",
-      role: "Software Development Engineer II",
-      period: "Jan 2025 - Present",
-      status: "ACTIVE",
-      achievements: [
-        "Developed scalable UI components in React",
-        "Built and fine-tuned internal LLM wrapper",
-        "Automated document processing (70% efficiency gain)",
-        "Optimized LLM prompts and system integration",
-      ],
-    },
-    {
-      company: "TALENTXO",
-      role: "Software Development Engineer I",
-      period: "Sept 2023 - Dec 2024",
-      status: "COMPLETED",
-      achievements: [
-        "30% improvement in application performance",
-        "40% reduction in integration time",
-        "99.9% uptime achievement",
-        "95% reduction in post-deployment issues",
-      ],
-    },
-    {
-      company: "GUNI SMS",
-      role: "Frontend Engineer",
-      period: "Dec 2021 - Sept 2023",
-      status: "COMPLETED",
-      achievements: [
-        "20% improvement in user engagement",
-        "30% reduction in integration time",
-        "Led team of 4 developers",
-        "70% decrease in pre-release issues",
-      ],
-    },
-  ]
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4"
-    >
-      <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">MISSION HISTORY</h2>
-
-      {missions.map((mission, index) => (
-        <div key={index} className="bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
-            <div className="flex-1">
-              <h3 className="text-orange-500 font-bold text-base md:text-lg">{mission.company}</h3>
-              <p className="text-gray-300 text-sm md:text-base">{mission.role}</p>
-            </div>
-            <div className="flex flex-col sm:items-end gap-1">
-              <div
-                className={`px-3 py-1 rounded text-xs font-bold w-fit ${
-                  mission.status === "ACTIVE" ? "bg-green-500 text-black" : "bg-gray-600 text-white"
-                }`}
-              >
-                {mission.status}
-              </div>
-              <div className="text-gray-400 text-xs md:text-sm">{mission.period}</div>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            {mission.achievements.map((achievement, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <ChevronRight size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-xs md:text-sm">{achievement}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </motion.div>
-  )
-}
-
-function ProjectsView() {
-  const projects = [
-    {
-      name: "Talent Partner Dashboard",
-      url: "https://talentxo.com",
-      status: "DEPLOYED",
-      description: "Advanced recruitment management system",
-    },
-    {
-      name: "Guni SMS Platform",
-      url: "https://app.gunisms.com.au",
-      status: "ACTIVE",
-      description: "SMS management and analytics platform",
-    },
-    {
-      name: "Magic Exports",
-      url: "https://magicexports.in",
-      status: "LIVE",
-      description: "Export business management system",
-    },
-    {
-      name: "Motoworld Website",
-      url: "https://manaliladakhmotoworld.com/",
-      status: "LIVE",
-      description: "Tourism and motorcycle rental platform",
-    },
-    {
-      name: "Club Events Handler",
-      url: "https://intense-shelf-96174.herokuapp.com/",
-      status: "ARCHIVED",
-      description: "Event management system for clubs",
-    },
-  ]
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4"
-    >
-      <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">PROJECT CODEX</h2>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-orange-500 transition-colors touch-manipulation"
-          >
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="font-bold text-orange-500 text-sm md:text-base flex-1 pr-2">{project.name}</h3>
-              <div
-                className={`px-2 py-1 rounded text-xs flex-shrink-0 ${
-                  project.status === "ACTIVE"
-                    ? "bg-green-500 text-black"
-                    : project.status === "DEPLOYED" || project.status === "LIVE"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-600 text-white"
-                }`}
-              >
-                {project.status}
-              </div>
-            </div>
-            <p className="text-gray-400 text-xs md:text-sm mb-3">{project.description}</p>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 text-xs hover:text-cyan-300 transition-colors break-all"
-            >
-              {project.url}
-            </a>
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  )
-}
-
-function SkillsView() {
-  const skillCategories = [
-    {
-      name: "FRONTEND",
-      skills: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Next.js", "Tailwind CSS", "Redux"],
-    },
-    {
-      name: "BACKEND",
-      skills: ["Python", "Node.js", "FastAPI", "Flask", "Express.js", "MongoDB", "MySQL", "JWT"],
-    },
-    {
-      name: "TOOLS",
-      skills: ["Git", "AWS", "Google Cloud", "Docker", "JIRA", "Postman", "VSCode", "Linux"],
-    },
-  ]
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4 md:space-y-6"
-    >
-      <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">TACTICAL ARSENAL</h2>
-
-      {skillCategories.map((category, index) => (
-        <div key={index} className="bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700">
-          <h3 className="text-orange-500 font-bold mb-4 text-sm md:text-base">{category.name}</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
-            {category.skills.map((skill, i) => (
-              <div key={i} className="bg-gray-700 px-2 md:px-3 py-2 rounded text-center text-xs md:text-sm">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </motion.div>
-  )
-}
-
-function ContactView() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="space-y-4 md:space-y-6"
-    >
-      <div className="bg-gray-800 rounded-lg p-4 md:p-6 border border-gray-700">
-        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">COMMUNICATION CHANNELS</h2>
-
-        <div className="space-y-4">
-          <a
-            href="mailto:iamvaibhav.agarwal@gmail.com"
-            className="flex items-center gap-4 p-4 bg-gray-700 rounded hover:bg-gray-600 transition-colors touch-manipulation"
-          >
-            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse flex-shrink-0" />
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm md:text-base">EMAIL PROTOCOL</div>
-              <div className="text-gray-400 text-xs md:text-sm break-all">iamvaibhav.agarwal@gmail.com</div>
-            </div>
-          </a>
-
-          <a
-            href="https://linkedin.com/in/vaibhava17"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-gray-700 rounded hover:bg-gray-600 transition-colors touch-manipulation"
-          >
-            <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse flex-shrink-0" />
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm md:text-base">LINKEDIN NETWORK</div>
-              <div className="text-gray-400 text-xs md:text-sm break-all">linkedin.com/in/vaibhava17</div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/vaibhava17"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-gray-700 rounded hover:bg-gray-600 transition-colors touch-manipulation"
-          >
-            <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse flex-shrink-0" />
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm md:text-base">CODE REPOSITORY</div>
-              <div className="text-gray-400 text-xs md:text-sm break-all">github.com/vaibhava17</div>
-            </div>
-          </a>
-
-          <a
-            href="tel:+918279875697"
-            className="flex items-center gap-4 p-4 bg-gray-700 rounded hover:bg-gray-600 transition-colors touch-manipulation"
-          >
-            <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse flex-shrink-0" />
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-sm md:text-base">DIRECT COMM</div>
-              <div className="text-gray-400 text-xs md:text-sm">+91 8279875697</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </motion.div>
   )
 }
