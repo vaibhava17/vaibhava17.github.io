@@ -1,23 +1,27 @@
-import { Nav } from "@/components/sections/nav"
-import { Hero } from "@/components/sections/hero"
-import { Experience } from "@/components/sections/experience"
-import { Work } from "@/components/sections/work"
-import { Skills } from "@/components/sections/skills"
-import { Credentials } from "@/components/sections/credentials"
-import { Contact } from "@/components/sections/contact"
+import { Tone } from "@/components/site/tone"
+import { Nav } from "@/components/site/nav"
+import { Hero } from "@/components/site/hero"
+import { Statement } from "@/components/site/statement"
+import { Impact } from "@/components/site/impact"
+import { Work } from "@/components/site/work"
+import { More } from "@/components/site/more"
+import { Experience } from "@/components/site/experience"
+import { Contact } from "@/components/site/contact"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
+      <Tone />
       <Nav />
       <main>
         <Hero />
-        <Experience />
+        <Statement />
+        <Impact />
         <Work />
-        <Skills />
-        <Credentials />
+        <More />
+        <Experience />
         <Contact />
       </main>
-    </div>
+    </>
   )
 }
