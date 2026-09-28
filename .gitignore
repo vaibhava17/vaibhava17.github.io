@@ -25,3 +25,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# husky
+.husky/_
+
+# local resume preview (site generates this in-browser on click)
+/resume-preview.pdf
+/public/resume.pdf

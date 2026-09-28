@@ -13,10 +13,12 @@ module.exports = {
     ...defaultConfig.theme,
     extend: {
       colors: {
-        "neon-orange": "#FF6F1F",
-        "neon-blue": "#00F0FF",
-        "neon-green": "#39FF14",
-        "neon-red": "#FF2E63",
+        ink: "#10141F",
+        paper: "#EDEFEA",
+        graphite: "#5B6169",
+        amber: "#E8A33D",
+        "diff-add": "#3F8F5F",
+        "diff-remove": "#A64B41",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -52,21 +54,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "monospace"],
-      },
-      animation: {
-        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        glow: "glow 2s ease-in-out infinite alternate",
-      },
-      keyframes: {
-        glow: {
-          "0%": {
-            textShadow: "0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor",
-          },
-          "100%": {
-            textShadow: "0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor",
-          },
-        },
+        sans: ["var(--font-sans)", "IBM Plex Sans", "sans-serif"],
+        mono: ["var(--font-mono)", "IBM Plex Mono", "monospace"],
       },
       backdropBlur: {
         xs: "2px",
