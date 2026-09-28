@@ -1,99 +1,91 @@
 "use client"
 
+import { useRef } from "react"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 import Link from "next/link"
 import { profile, links } from "@/lib/data"
+import { EASE } from "./motion"
 
 export function Contact() {
+  const ref = useRef<HTMLAnchorElement>(null)
+  const x = useSpring(useMotionValue(0), { stiffness: 150, damping: 12 })
+  const y = useSpring(useMotionValue(0), { stiffness: 150, damping: 12 })
+
+  // The hello button leans toward a mouse pointer; touch screens just tap it.
+  const lean = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse" || !ref.current) return
+    const r = ref.current.getBoundingClientRect()
+    x.set((e.clientX - r.left - r.width / 2) * 0.35)
+    y.set((e.clientY - r.top - r.height / 2) * 0.35)
+  }
+  const rest = () => {
+    x.set(0)
+    y.set(0)
+  }
+
   return (
-    <footer id="contact" className="py-16 sm:py-20 bg-[#08090e]">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-10">
-          <div>
-            <div className="text-xs font-mono text-emerald-400 font-semibold tracking-wider">
-              // 06. CONTACT & COMMUNICATION
-            </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1 font-sans">
-              Let&apos;s Build Production Systems
-            </h2>
-          </div>
-          <div className="text-xs font-mono text-slate-400">
-            Open to Senior AI / Full-Stack Engineer roles, consulting, and architectural collaborations.
-          </div>
-        </div>
-
-        {/* Developer terminal contact panel */}
-        <div className="p-6 sm:p-8 rounded-xl border border-[#272733] bg-[#0c0d14] space-y-6">
-          <div className="flex items-center justify-between border-b border-[#1e2029] pb-4 text-xs font-mono text-slate-400">
-            <span className="text-slate-300 font-semibold">$ connect --channel=direct</span>
-            <span className="text-emerald-400">STATUS: ACCEPTING_INQUIRIES</span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
-            <div className="p-4 rounded-lg bg-[#12131a] border border-[#1e2029] space-y-1">
-              <div className="text-slate-400 text-[11px]">EMAIL DIRECT</div>
-              <a
-                href={`mailto:${links.email}`}
-                className="text-emerald-400 hover:text-emerald-300 font-semibold break-all"
-              >
-                {links.email}
+    <section className="contact" id="contact" data-tone="dark" data-accent="#0a84ff">
+      <div className="wrap">
+        <p className="eyebrow">Contact</p>
+        <h2 className="contact__big">
+          Let’s build <span className="grad">something real.</span>
+        </h2>
+        <p className="contact__open">
+          Open to {profile.openTo.charAt(0).toLowerCase() + profile.openTo.slice(1)}.
+        </p>
+        <div className="contact__row">
+          <motion.a
+            ref={ref}
+            href={`mailto:${links.email}`}
+            className="hello"
+            aria-label={`Email ${profile.name}`}
+            style={{ x, y }}
+            onPointerMove={lean}
+            onPointerLeave={rest}
+            initial={{ scale: 0.85, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: EASE }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="hello__face" src={profile.avatar} alt={profile.name} width={240} height={240} />
+          </motion.a>
+          <ul className="contact__links">
+            <li>
+              <a href={`mailto:${links.email}`}>{links.email}</a>
+            </li>
+            <li>
+              <a href={links.linkedin} target="_blank" rel="noopener">
+                LinkedIn ↗
               </a>
-            </div>
-
-            <div className="p-4 rounded-lg bg-[#12131a] border border-[#1e2029] space-y-1">
-              <div className="text-slate-400 text-[11px]">LINKEDIN PROFILE</div>
-              <a
-                href={links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-200 hover:text-emerald-400 flex items-center justify-between"
-              >
-                <span>in/vaibhava17</span>
-                <span>&nearr;</span>
+            </li>
+            <li>
+              <a href={links.github} target="_blank" rel="noopener">
+                GitHub ↗
               </a>
-            </div>
-
-            <div className="p-4 rounded-lg bg-[#12131a] border border-[#1e2029] space-y-1">
-              <div className="text-slate-400 text-[11px]">GITHUB REPOSITORIES</div>
-              <a
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-200 hover:text-emerald-400 flex items-center justify-between"
-              >
-                <span>github.com/vaibhava17</span>
-                <span>&nearr;</span>
-              </a>
-            </div>
-
-            <div className="p-4 rounded-lg bg-[#12131a] border border-[#1e2029] space-y-1">
-              <div className="text-slate-400 text-[11px]">CURRICULUM VITAE</div>
+            </li>
+            <li>
               <a
                 href="/Vaibhav-Agarwal-Resume.pdf"
                 download="Vaibhav-Agarwal-Resume.pdf"
-                className="text-emerald-400 hover:text-emerald-300 flex items-center justify-between font-semibold"
+                className="linkbtn"
               >
-                <span>Download PDF</span>
-                <span>&darr;</span>
+                Download résumé ↓
               </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Clean copyright and navigation bar */}
-        <div className="mt-12 pt-6 border-t border-[#1e2029] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-          <div>
-            &copy; {new Date().getFullYear()} {profile.name} · Gurugram, India. All systems operational.
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1"
-            >
-              <span>&larr; Switch to standard v1.0 portfolio</span>
-            </Link>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <footer className="foot">
+        <span>
+          © {new Date().getFullYear()} {profile.name} · {profile.location.split(" / ")[0]}
+        </span>
+        <div style={{ display: "flex", gap: "16px" }}>
+          <Link href="/" style={{ color: "var(--fg-2)", fontSize: "13px" }}>
+            ← Switch to standard v1.0 portfolio
+          </Link>
+        </div>
+      </footer>
+    </section>
   )
 }
