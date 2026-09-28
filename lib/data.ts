@@ -10,7 +10,7 @@ export const profile = {
   headline:
     "Full-stack & AI systems engineer building agents, local-first RAG, and production SaaS",
   tagline:
-    "I ship production SaaS, autonomous AI agents, and developer tooling that solve real problems — not demos.",
+    "I ship production SaaS, autonomous AI agents, and developer tooling that solve real problems, built for production.",
   summary:
     "Software Development Engineer with hands-on experience building production SaaS platforms, autonomous AI workflows, and developer tooling. Creator of Hortiprise (a complete agricultural nursery SaaS with AI OCR invoice digitization and WhatsApp workflows), DiffCommit AI (published VS Code extension across 9 AI providers), Syntra (local-first RAG with git-diff incremental indexing), and deterministic AI pipelines.",
   location: "Gurugram / Delhi NCR, India",
@@ -38,14 +38,14 @@ export const experience: Experience[] = [
   {
     company: "Solfin",
     role: "Software Development Engineer II",
-    period: "Jan 2025 — Present",
+    period: "Jan 2025 - Present",
     location: "Gurugram, India",
     website: "https://solfin.co.in",
     current: true,
     highlights: [
       "Architected and owned the frontend for Commercial & Industrial (CNI) and Supply Chain Finance (SCF) solar loan journeys, streamlining end-to-end workflows from application through credit underwriting to disbursement.",
       "Engineered an AI document intelligence service with a structured RAG pipeline for bill extraction.",
-      "Optimized LLM inference and document pipelines while supporting 8,000–10,000 weekly calls at under 1% failure rate.",
+      "Optimized LLM inference and document pipelines while supporting 8,000-10,000 weekly calls at under 1% failure rate.",
       "Built a unified, multi-provider LLM service layer routing across Google Gemini, AWS Bedrock, and OpenAI for internal chatbots and business services.",
       "Developed an automated Tech-Ops pipeline turning WhatsApp and Gmail issues into tracked tickets with live status dispatch to Sales, and a resource-aware data warehouse job scheduler.",
     ],
@@ -71,7 +71,7 @@ export const experience: Experience[] = [
   {
     company: "Hortiprise",
     role: "Lead Engineer (Side Project)",
-    period: "2025 — Present",
+    period: "2025 - Present",
     location: "Gurugram, India",
     website: "https://hortiprise.com",
     current: true,
@@ -102,7 +102,7 @@ export const experience: Experience[] = [
   {
     company: "TalentXO",
     role: "Software Development Engineer I",
-    period: "Sept 2023 — Dec 2024",
+    period: "Sept 2023 - Dec 2024",
     location: "Remote / Bangalore, India",
     website: "https://talentxo.com",
     current: false,
@@ -126,12 +126,12 @@ export const experience: Experience[] = [
   {
     company: "Guni SMS",
     role: "Frontend & Mobile Engineer",
-    period: "Dec 2021 — Sept 2023",
+    period: "Dec 2021 - Sept 2023",
     location: "Remote / Sydney, Australia",
     website: "https://gunisms.com.au",
     current: false,
     highlights: [
-      "Built and maintained the React web platform for an Australian enterprise SMS gateway — campaign creation, messaging broadcasts, and contact lifecycle management.",
+      "Built and maintained the React web platform for an Australian enterprise SMS gateway: campaign creation, messaging broadcasts, and contact lifecycle management.",
       "Spearheaded the core dashboard modernization from V1 to V2, redesigning UI architecture into reusable React components and pages.",
       "Engineered responsive, mobile-optimized interfaces across the messaging suite.",
       "Collaborated with backend engineers on automated two-way messaging workflows triggered by real-time replies and scheduled campaigns.",
@@ -169,7 +169,7 @@ export const flagshipProjects: Project[] = [
     description:
       "End-to-end nursery lifecycle tracking from seed germination to dispatch; automated invoice/bill digitization via Google Cloud Vision OCR with Tesseract fallback; conversational WhatsApp ordering and support; background billing/subscription workers; custom infrastructure monitoring.",
     value:
-      "Real commercial production SaaS replacing pen-and-paper operations for plant nurseries — 1,500+ commits across full-stack repositories.",
+      "Real commercial production SaaS replacing pen-and-paper operations for plant nurseries, with 1,500+ commits across full-stack repositories.",
     tech: [
       "Next.js 14",
       "TypeScript",
@@ -191,7 +191,7 @@ export const flagshipProjects: Project[] = [
     title: "DiffCommit AI",
     tagline: "Published VS Code extension for semantic git commit generation",
     description:
-      "Analyzes staged git diffs and generates structured commit messages inside VS Code's source control panel. Supports 9 AI providers — Claude, GPT, Gemini, DeepSeek, xAI Grok, Mistral, Groq, OpenRouter, and local offline Ollama. Zero runtime dependencies.",
+      "Analyzes staged git diffs and generates structured commit messages inside VS Code's source control panel. Supports 9 AI providers: Claude, GPT, Gemini, DeepSeek, xAI Grok, Mistral, Groq, OpenRouter, and local offline Ollama. Zero runtime dependencies.",
     value:
       "Published on the Visual Studio Marketplace. Keeps API keys in the OS keychain via VS Code's native SecretStorage API, not plaintext config.",
     tech: ["JavaScript", "Node.js", "VS Code API", "VS Code SecretStorage"],
@@ -215,9 +215,9 @@ export const flagshipProjects: Project[] = [
     title: "AI Investment Pipeline",
     tagline: "Deterministic 3-stage startup triage & memo generation engine",
     description:
-      "Autonomous pipeline (source → analyze → recommend) for seed-stage VC thesis matching. Scores startups 0–100 against an AI infrastructure thesis and applies a deterministic rubric for Pass/Watch/Meeting verdicts, with on-disk JSON caching for zero-cost replay.",
+      "Autonomous pipeline (source → analyze → recommend) for seed-stage VC thesis matching. Scores startups 0-100 against an AI infrastructure thesis and applies a deterministic rubric for Pass/Watch/Meeting verdicts, with on-disk JSON caching for zero-cost replay.",
     value:
-      "Eliminates LLM hallucination and decision drift in financial analysis — auditable, backed by a full Pytest suite and a decision log.",
+      "Eliminates LLM hallucination and decision drift in financial analysis: auditable, backed by a full Pytest suite and a decision log.",
     tech: ["Python", "LiteLLM", "Pytest", "JSON checkpointing", "Deterministic rubric engine"],
     category: "AI engineering / fintech",
     status: "Tested, verified pipeline",
@@ -229,7 +229,7 @@ export const otherProjects: Project[] = [
     title: "Budsy Testing Agent",
     tagline: "Autonomous web & mobile UI testing agent driven by plain English",
     description:
-      "Takes plain-English test instructions, captures screenshots, reads UI coordinates via multimodal vision, and drives the browser/app via Appium — no brittle CSS/XPath selectors.",
+      "Takes plain-English test instructions, captures screenshots, reads UI coordinates via multimodal vision, and drives the browser/app via Appium without brittle CSS/XPath selectors.",
     value: "",
     tech: ["Node.js", "Appium 2.x", "Multimodal AI", "Computer vision"],
     category: "Autonomous agents / QA",
@@ -295,7 +295,7 @@ export const otherProjects: Project[] = [
     title: "Unit Atlas",
     tagline: "High-precision engineering conversion platform & spatial API",
     description:
-      "Engineering calculation and unit conversion platform with a FastAPI backend and Next.js frontend — rate-limited endpoints, precision math, i18n, and full Jest/Pytest coverage enforced pre-build.",
+      "Engineering calculation and unit conversion platform with a FastAPI backend and Next.js frontend with rate-limited endpoints, precision math, i18n, and full Jest/Pytest coverage enforced pre-build.",
     value: "",
     tech: [
       "FastAPI",
@@ -526,14 +526,14 @@ export const education: Education[] = [
     school: "IIT Mandi",
     degree: "Minor in CSE",
     area: "Computer Science & Engineering",
-    period: "2024 — 2026",
+    period: "2024 - 2026",
     grade: "7.0 CGPA",
   },
   {
     school: "Shri Siddhi Vinayak Group of Institutions, Bareilly",
     degree: "B.Tech",
     area: "Computer Science & Engineering",
-    period: "2019 — 2023",
+    period: "2019 - 2023",
     grade: "8.2 CGPA",
     notes: "Software engineering, distributed systems, and web technologies.",
   },
@@ -562,13 +562,13 @@ export const community: Community[] = [
   {
     organization: "Google Developer Student Clubs (GDSC)",
     role: "Core Team Member / Web Lead",
-    period: "2021 — 2022",
+    period: "2021 - 2022",
     notes: "Mentored peers on modern web development and organized developer workshops.",
   },
   {
     organization: "EddieHubCommunity",
     role: "Open Source Contributor",
-    period: "2021 — 2023",
+    period: "2021 - 2023",
     notes: "Contributed to collaborative open-source repositories and documentation.",
   },
 ]

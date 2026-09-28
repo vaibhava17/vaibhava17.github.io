@@ -19,7 +19,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Vaibhav Agarwal",
   description:
-    "Full-stack & AI systems engineer — production SaaS, autonomous agents, and local-first RAG. SDE II at Solfin, builder of Hortiprise.",
+    "Full-stack and AI systems engineer. Production SaaS, autonomous agents, and local-first RAG. SDE II at Solfin, builder of Hortiprise.",
   generator: "v0.dev",
 }
 
