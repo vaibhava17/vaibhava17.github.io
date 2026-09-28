@@ -1,28 +1,30 @@
-# vaibhava17.github.io
+# Cyberpunk portfolio website
 
-Portfolio of Vaibhav Agarwal, live at https://vaibhava17.github.io.
+_Automatically synced with your [v0.dev](https://v0.dev) deployments_
 
-Next.js 14 static export, deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/IIRlwPdaaPJ)
 
-## Editing content
+## Overview
 
-All facts live in `lib/data.ts`: profile, experience, projects, skills, education. The site and the
-downloadable résumé (`lib/resume-pdf.ts`) both read it, so one edit updates both.
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
 
-`lib/site.ts` only controls presentation: which four projects get a scroll-driven chapter, each
-chapter's accent colour and headline, and the numbers in the Impact section.
+## Deployment
 
-## Structure
+Your project is live at:
 
-- `components/site/` — one file per section, in page order (`app/page.tsx`)
-- `components/site/viz/` — the four project diagrams; each takes a 0→1 scroll progress value
-- `components/site/tone.tsx` — repaints the page light/dark and sets the accent as sections reach mid-screen
+**[https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)**
 
-## Commands
+## Build your app
 
-```sh
-npm install --legacy-peer-deps
-npm run dev        # http://localhost:3000
-npm run build      # static site in out/
-npm run resume     # writes resume-preview.pdf from lib/data.ts
-```
+Continue building your app on:
+
+**[https://v0.dev/chat/projects/IIRlwPdaaPJ](https://v0.dev/chat/projects/IIRlwPdaaPJ)**
+
+## How It Works
+
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository
