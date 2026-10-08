@@ -6,13 +6,13 @@ export interface Metric {
 
 export const profile = {
   name: "Vaibhav Agarwal",
-  role: "Software Development Engineer II @ Solfin & builder of Hortiprise",
+  role: "AI Lead @ Solfin & builder of Hortiprise",
   headline:
-    "Full-stack & AI systems engineer building agents, local-first RAG, and production SaaS",
+    "AI Lead & Senior Backend Systems Engineer building autonomous agents, local-first RAG, and production systems",
   tagline:
     "I ship production SaaS, autonomous AI agents, and developer tooling that solve real problems, built for production.",
   summary:
-    "Software Development Engineer with hands-on experience building production SaaS platforms, autonomous AI workflows, and developer tooling. Creator of Hortiprise (a complete agricultural nursery SaaS with AI OCR invoice digitization and WhatsApp workflows), DiffCommit AI (published VS Code extension across 9 AI providers), Syntra (local-first RAG with git-diff incremental indexing), and deterministic AI pipelines.",
+    "AI Lead & Senior Systems Engineer with hands-on experience building production SaaS platforms, autonomous AI agent infrastructure, and developer tooling. Creator of Nova (autonomous multi-agent TechOps and support ticketing pipeline in production), Hortiprise (complete agricultural nursery SaaS with RAG and WhatsApp workflows), DiffCommit AI (published VS Code extension across 9 AI providers), Syntra (local-first RAG with git-diff incremental indexing), and deterministic AI pipelines.",
   location: "Gurugram / Delhi NCR, India",
   email: "iamvaibhav.agarwal@gmail.com",
   github: "https://github.com/vaibhava17",
@@ -37,19 +37,20 @@ export interface Experience {
 export const experience: Experience[] = [
   {
     company: "Solfin",
-    role: "Software Development Engineer II",
+    role: "AI Lead",
     period: "Jan 2025 - Present",
     location: "Gurugram, India",
     website: "https://solfin.co.in",
     current: true,
     highlights: [
+      "Architected and deployed NOVA, an autonomous production WhatsApp-to-Chatwoot AI TechOps & Support Agent: 3-tier triage routing (AWS Bedrock, OpenAI, Gemini) reducing token costs by 95%, with deterministic hash deduplication and sub-second ticket synchronization.",
       "Architected and owned the frontend for Commercial & Industrial (CNI) and Supply Chain Finance (SCF) solar loan journeys, streamlining end-to-end workflows from application through credit underwriting to disbursement.",
       "Engineered an AI document intelligence service with a structured RAG pipeline for bill extraction.",
       "Optimized LLM inference and document pipelines while supporting 8,000-10,000 weekly calls at under 1% failure rate.",
       "Built a unified, multi-provider LLM service layer routing across Google Gemini, AWS Bedrock, and OpenAI for internal chatbots and business services.",
-      "Developed an automated Tech-Ops pipeline turning WhatsApp and Gmail issues into tracked tickets with live status dispatch to Sales, and a resource-aware data warehouse job scheduler.",
     ],
     metrics: [
+      { label: "AI operational token reduction", from: "0%", to: "95%" },
       { label: "bill extraction accuracy", from: "70%", to: "90%" },
       { label: "avg. LLM response latency", from: "20s", to: "7s" },
     ],
@@ -70,7 +71,7 @@ export const experience: Experience[] = [
   },
   {
     company: "Hortiprise",
-    role: "Lead Engineer (Side Project)",
+    role: "Founding Engineer (Personal Project)",
     period: "2025 - Present",
     location: "Gurugram, India",
     website: "https://hortiprise.com",
@@ -164,6 +165,27 @@ export interface Project {
 
 export const flagshipProjects: Project[] = [
   {
+    title: "Nova",
+    tagline: "Autonomous production AI TechOps & multi-agent support ticketing agent",
+    description:
+      "Autonomous AI TechOps and operational support orchestration agent operating live in production at Solfin. Pairs zero-cost deterministic heuristics with dynamic multi-model LLM routing (AWS Bedrock, OpenAI, Gemini), slashing AI operational token costs by 95%. Features idempotent state machines, sub-second ticket deduplication, and automated human escalation across WhatsApp and Chatwoot.",
+    value:
+      "Processes high-volume production incident messaging in real time with sub-second response latency and zero ticket duplication during major outages.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "AWS Bedrock",
+      "OpenAI",
+      "Google Gemini",
+      "PostgreSQL",
+      "Docker",
+      "Chatwoot API",
+      "WhatsApp Business API",
+    ],
+    category: "Autonomous AI Agents / Production TechOps",
+    status: "Production, active",
+  },
+  {
     title: "Hortiprise",
     tagline: "Complete nursery-management SaaS with AI operations",
     description:
@@ -183,7 +205,7 @@ export const flagshipProjects: Project[] = [
       "Docker",
       "GCP",
     ],
-    category: "Production SaaS / AgriTech",
+    category: "Personal Project / AgriTech SaaS",
     status: "Production, active",
     liveUrl: "https://hortiprise.com",
   },
