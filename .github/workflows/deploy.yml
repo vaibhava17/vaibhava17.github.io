@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Manual-only since 25 Oct 2026 (Vaibhav): auto-deploy on push removed to stop
+# unattended deploys + Actions billing. Deploy with:
+#   gh workflow run deploy.yml -R vaibhava17/vaibhava17.github.io [-f sha=<commit>]
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
