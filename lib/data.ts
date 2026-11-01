@@ -343,6 +343,17 @@ export const otherProjects: Project[] = [
     category: "AI automation / career tools",
     status: "Active, personal tool",
   },
+  {
+    title: "Mandi Scraper",
+    tagline: "Automated pan-India agricultural price data pipeline",
+    description:
+      "Aggregates daily wholesale vegetable mandi prices (APMC/AGMARKNET), nursery seedling and sapling rates, and commercial hybrid seed costs into a single analytical engine. Python scrapers write to MongoDB, packaged with Docker.",
+    value: "",
+    tech: ["Python", "MongoDB", "Docker"],
+    category: "Data engineering / AgriTech",
+    status: "Open source",
+    repoUrl: "https://github.com/vaibhava17/mandi-scraper",
+  },
 ]
 
 export interface Skill {
