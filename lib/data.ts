@@ -343,6 +343,28 @@ export const otherProjects: Project[] = [
     category: "AI automation / career tools",
     status: "Active, personal tool",
   },
+  {
+    title: "Mandi Scraper",
+    tagline: "Daily India mandi price intelligence pipeline",
+    description:
+      "Scrapes daily India mandi vegetable prices, nursery sapling rates, and seed prices, storing structured time-series data in MongoDB for downstream agri-market analysis.",
+    value: "",
+    tech: ["Python", "MongoDB", "Web scraping"],
+    category: "Data engineering / AgriTech",
+    status: "Open source",
+    repoUrl: "https://github.com/vaibhava17/mandi-scraper",
+  },
+  {
+    title: "Bees & Beans",
+    tagline: "Handmade chocolates e-commerce & gifting site",
+    description:
+      "Premium bulk and festive gifting website built for Bees & Beans Handmade Chocolates, covering product catalog, bulk order inquiries, and seasonal campaigns.",
+    value: "",
+    tech: ["Next.js", "TypeScript"],
+    category: "Web app / e-commerce",
+    status: "Live site",
+    repoUrl: "https://github.com/vaibhava17/bees-and-beans",
+  },
 ]
 
 export interface Skill {
