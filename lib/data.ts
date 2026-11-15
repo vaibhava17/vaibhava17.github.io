@@ -343,6 +343,18 @@ export const otherProjects: Project[] = [
     category: "AI automation / career tools",
     status: "Active, personal tool",
   },
+  {
+    title: "Terra Toy",
+    tagline: "Original interactive 3D globe toy for kids, own assets",
+    description:
+      "An original interactive 3D WebGL globe built with Preact, Zustand, and TypeScript, featuring procedural 3D landmark models (10+ landmark builders with icon<->live LOD transitions), country border rendering with hover/tap highlighting, 20+ starter landmarks with fly-to navigation and info cards, and neutral 'disputed area' labeling for internationally disputed regions.",
+    value: "",
+    tech: ["TypeScript", "Preact", "Zustand", "WebGL", "Vite"],
+    category: "Web app / creative coding",
+    status: "Live, open source",
+    repoUrl: "https://github.com/vaibhava17/terra-toy",
+    liveUrl: "https://terra-toy.heyvaibhav.dev/",
+  },
 ]
 
 export interface Skill {
