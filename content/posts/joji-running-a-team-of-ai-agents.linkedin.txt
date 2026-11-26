@@ -1,0 +1,22 @@
+I run a small team of AI agents on one Linux server. After 270+ logged changes, the hard problems were never the model.
+
+The team is built on Hermes, the open-source agent framework from Nous Research. Joji is the lead: I message her on WhatsApp in plain English. Behind her are engineers that open PRs, a reviewer, a QA agent that tests on staging, an ops agent that reads mail, and a job-hunt agent.
+
+Every PR moves through a pipeline: review → fix → staging → QA → ship. The driver between steps is plain Python with no LLM in it. The model is creative inside a step; the plumbing between steps never is.
+
+When I categorised every incident in the log, the repeat offenders were:
+→ Hand-offs lost between steps
+→ Stale status: "done" on one screen, "in progress" on another
+→ Loops that look like progress (one PR went through six fix rounds this week)
+→ Alert noise, including a duplicate-message bug that came down to one line saved in the wrong order
+→ OS details, like editing a running bash script and killing a live run
+
+What I'd tell anyone starting:
+1. Deterministic orchestration, small steps.
+2. Log every change, then actually read the log.
+3. Budget human attention like money. Every message that reaches you should need you.
+4. Expect the boring failures. Fixing them is what makes the system trustworthy.
+
+Full case study:
+
+#AIAgents #LLM #MultiAgentSystems #AIEngineering #BuildInPublic

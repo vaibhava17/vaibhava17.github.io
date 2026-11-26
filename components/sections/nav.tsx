@@ -7,11 +7,13 @@ import { ResumeButton } from "@/components/resume-button"
 import { ViewToggle } from "@/components/view/view-toggle"
 import { useView } from "@/components/view/view-context"
 
+// Absolute links so the nav also works on /writing/ pages
 const NAV_LINKS = [
-  { id: "work", label: "Work" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/writing/", label: "Writing" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#contact", label: "Contact" },
 ]
 
 export function Nav() {
@@ -43,8 +45,8 @@ export function Nav() {
         <nav className={`hidden items-center gap-6 ${human ? "md:flex" : ""}`}>
           {NAV_LINKS.map((link) => (
             <a
-              key={link.id}
-              href={`#${link.id}`}
+              key={link.href}
+              href={link.href}
               className="text-sm text-graphite hover:text-foreground"
             >
               {link.label}
@@ -75,8 +77,8 @@ export function Nav() {
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <a
-                key={link.id}
-                href={`#${link.id}`}
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-sm text-graphite hover:text-foreground"
               >

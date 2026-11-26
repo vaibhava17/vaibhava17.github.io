@@ -5,6 +5,7 @@ import { Work } from "@/components/sections/work"
 import { Skills } from "@/components/sections/skills"
 import { Credentials } from "@/components/sections/credentials"
 import { Contact } from "@/components/sections/contact"
+import { Writing } from "@/components/sections/writing"
 import { ViewProvider } from "@/components/view/view-context"
 import { ViewShell } from "@/components/view/view-shell"
 import { profileMarkdown } from "@/lib/markdown"
@@ -19,6 +20,7 @@ export default function Portfolio() {
             <Hero />
             <Experience />
             <Work />
+            <Writing />
             <Skills />
             <Credentials />
             <Contact />
