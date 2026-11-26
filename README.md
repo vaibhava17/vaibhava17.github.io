@@ -1,30 +1,70 @@
-# Cyberpunk portfolio website
+# heyvaibhav.dev
 
-_Automatically synced with your [v0.dev](https://v0.dev) deployments_
+Personal site of **Vaibhav Agarwal**, AI Lead and senior backend engineer. Live at **[heyvaibhav.dev](https://heyvaibhav.dev)**.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/IIRlwPdaaPJ)
+The site has two views of the same facts:
 
-## Overview
+| View        | For                                | Where                                                                |
+| ----------- | ---------------------------------- | -------------------------------------------------------------------- |
+| **Human**   | people                             | [heyvaibhav.dev](https://heyvaibhav.dev)                             |
+| **Machine** | LLMs, recruiters' agents, crawlers | [heyvaibhav.dev/?view=machine](https://heyvaibhav.dev/?view=machine) |
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+The Human / Machine switch in the nav swaps the page for its raw Markdown, with links to the files an agent can fetch directly.
 
-## Deployment
+## Machine-readable endpoints
 
-Your project is live at:
+All generated at build time from [`lib/data.ts`](lib/data.ts), so they never drift from the page.
 
-**[https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website](https://vercel.com/vaibhava17s-projects/v0-cyberpunk-portfolio-website)**
+| Path                                                     | Format             | What                                                           |
+| -------------------------------------------------------- | ------------------ | -------------------------------------------------------------- |
+| [`/index.md`](https://heyvaibhav.dev/index.md)           | `text/markdown`    | The whole profile as one Markdown document                     |
+| [`/llms.txt`](https://heyvaibhav.dev/llms.txt)           | `text/plain`       | Short index for AI agents ([llmstxt.org](https://llmstxt.org)) |
+| [`/llms-full.txt`](https://heyvaibhav.dev/llms-full.txt) | `text/plain`       | Everything in one file                                         |
+| [`/profile.json`](https://heyvaibhav.dev/profile.json)   | `application/json` | The same facts as structured data                              |
+| [`/sitemap.xml`](https://heyvaibhav.dev/sitemap.xml)     | `application/xml`  | Sitemap                                                        |
+| [`/robots.txt`](https://heyvaibhav.dev/robots.txt)       | `text/plain`       | Crawl rules (AI crawlers welcome; `/v2` unlisted)              |
 
-## Build your app
+The HTML page also carries:
 
-Continue building your app on:
+- `<link rel="alternate" type="text/markdown" href="/index.md">` and the JSON equivalent
+- schema.org JSON-LD (`Person`, `WebSite`, `ProfilePage`)
+- Open Graph and Twitter cards with a 1200×630 preview image (`public/og.png`)
+- a canonical URL
 
-**[https://v0.dev/chat/projects/IIRlwPdaaPJ](https://v0.dev/chat/projects/IIRlwPdaaPJ)**
+## Editing content
 
-## How It Works
+Change **[`lib/data.ts`](lib/data.ts)** only. The human sections, the Markdown, `llms.txt`, `profile.json`, JSON-LD and the resume PDF all read from it.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+| File                                          | Role                                                          |
+| --------------------------------------------- | ------------------------------------------------------------- |
+| [`lib/data.ts`](lib/data.ts)                  | Single source of truth: profile, experience, projects, skills |
+| [`lib/markdown.ts`](lib/markdown.ts)          | Renders `data.ts` as Markdown and `llms.txt`                  |
+| [`lib/seo.ts`](lib/seo.ts)                    | Site URL, title, description, keywords, JSON-LD               |
+| [`app/layout.tsx`](app/layout.tsx)            | Metadata (Open Graph, alternates, robots) + JSON-LD           |
+| [`components/view/`](components/view)         | Human / Machine toggle and the Markdown viewer                |
+| [`components/sections/`](components/sections) | The human page                                                |
+
+The preview image `public/og.png` is a static file. Regenerate it if the name, role or headline change.
+
+## Stack
+
+Next.js 14 (App Router, `output: "export"`), React 18, TypeScript, Tailwind CSS, Framer Motion, IBM Plex. Static files on GitHub Pages behind the custom domain in [`CNAME`](CNAME).
+
+## Develop
+
+```bash
+npm ci --legacy-peer-deps
+npm run dev        # http://localhost:3000
+npm run lint
+npm run typecheck
+```
+
+## Deploy
+
+Manual only (no deploy on push):
+
+```bash
+gh workflow run deploy.yml -R vaibhava17/vaibhava17.github.io
+```
+
+The workflow builds the static export and publishes `out/` to GitHub Pages.

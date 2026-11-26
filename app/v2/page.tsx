@@ -13,7 +13,9 @@ import { Contact } from "@/components/v2/contact"
 export const metadata: Metadata = {
   title: "Vaibhav Agarwal | Software Engineer",
   description:
-    "Vaibhav Agarwal builds production SaaS, AI agents and developer tools. SDE II at Solfin, builder of Hortiprise.",
+    "Vaibhav Agarwal builds production SaaS, AI agents and developer tools. AI Lead at Solfin, builder of Hortiprise.",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "/" },
 }
 
 export default function V2Portfolio() {

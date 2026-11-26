@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ResumeButton } from "@/components/resume-button"
+import { ViewToggle } from "@/components/view/view-toggle"
+import { useView } from "@/components/view/view-context"
 
 const NAV_LINKS = [
   { id: "work", label: "Work" },
@@ -15,6 +17,8 @@ const NAV_LINKS = [
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { view } = useView()
+  const human = view === "human"
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -31,12 +35,12 @@ export function Nav() {
           : "border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-mono text-sm">
+      <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
+        <a href="/" className="font-mono text-sm">
           vaibhava17
         </a>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className={`hidden items-center gap-6 ${human ? "md:flex" : ""}`}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.id}
@@ -52,18 +56,21 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ViewToggle />
           <ThemeToggle />
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border md:hidden"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={16} /> : <Menu size={16} />}
-          </button>
+          {human && (
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border md:hidden"
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={16} /> : <Menu size={16} />}
+            </button>
+          )}
         </div>
       </div>
 
-      {open && (
+      {open && human && (
         <div className="border-t border-border bg-background px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
