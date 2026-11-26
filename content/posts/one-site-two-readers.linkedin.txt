@@ -1,0 +1,20 @@
+My portfolio now has two readers, and only one of them is human.
+
+More and more, the first thing that reads your site isn't a recruiter. It's an agent summarising you for one: a chat assistant, a crawler, a hiring tool scoring profiles. And it has to dig through animation and layout to find a single fact.
+
+So I added a Human / Machine switch, inspired by Docker's new site.
+
+Flip it to Machine and the page becomes its own source: the full profile as raw Markdown, plus the files an agent can fetch directly:
+→ /index.md, the whole profile in Markdown
+→ /llms.txt, a short index for AI agents
+→ /profile.json, the same facts as structured data
+
+The rule that mattered most: the two views can never disagree. Every fact lives in one file. The page, the Markdown, the JSON, the structured data and even my resume PDF are all generated from it.
+
+While I was at it I fixed the SEO basics my own site was missing: sitemap, robots rules that welcome AI crawlers, canonical URLs, a real preview card, and Person structured data.
+
+A portfolio is a document about you that you don't control the reading of. Making it legible to models is cheap, and it's the reader you probably didn't design for.
+
+Full write-up, and the switch itself:
+
+#AI #LLM #WebDevelopment #NextJS #SEO

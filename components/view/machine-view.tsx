@@ -4,7 +4,6 @@ import { Fragment, useState } from "react"
 import { Check, Copy } from "lucide-react"
 
 const ENDPOINTS = [
-  { href: "/index.md", label: "index.md", type: "text/markdown" },
   { href: "/llms.txt", label: "llms.txt", type: "text/plain" },
   { href: "/profile.json", label: "profile.json", type: "application/json" },
 ]
@@ -84,7 +83,17 @@ function Line({ line, frontmatter }: { line: string; frontmatter: boolean }) {
 }
 
 /** The page as an agent reads it: the same facts, as raw Markdown, with the endpoints to fetch it. */
-export function MachineView({ markdown }: { markdown: string }) {
+export function MachineView({
+  markdown,
+  source = "/index.md",
+}: {
+  markdown: string
+  source?: string
+}) {
+  const endpoints = [
+    { href: source, label: source.replace(/^\//, "") || "index.md", type: "text/markdown" },
+    ...ENDPOINTS,
+  ]
   const [copied, setCopied] = useState(false)
   const lines = markdown.replace(/\n+$/, "").split("\n")
   const fmEnd = lines[0] === "---" ? lines.indexOf("---", 1) : -1
@@ -116,10 +125,10 @@ export function MachineView({ markdown }: { markdown: string }) {
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-3">
           <div className="flex min-w-0 items-center gap-2 font-mono text-xs text-graphite">
             <span className="text-diff-add">$</span>
-            <span className="truncate">curl -s heyvaibhav.dev/index.md</span>
+            <span className="truncate">curl -s heyvaibhav.dev{source}</span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            {ENDPOINTS.map((e) => (
+            {endpoints.map((e) => (
               <a
                 key={e.href}
                 href={e.href}

@@ -15,6 +15,7 @@ import {
   type Project,
 } from "@/lib/data"
 import { SITE_URL } from "@/lib/seo"
+import { getPosts, TYPE_LABEL, type Post } from "@/lib/posts"
 
 const projectLinks = (p: Project) =>
   [p.liveUrl && `[live](${p.liveUrl})`, p.repoUrl && `[code](${p.repoUrl})`]
@@ -98,6 +99,14 @@ export function profileMarkdown(): string {
   for (const c of certifications) s.push(`- ${c.title}, ${c.issuer} (${c.year})`)
   s.push("", "## Community", "")
   for (const c of community) s.push(`- **${c.role}**, ${c.organization} (${c.period}). ${c.notes}`)
+  const posts = getPosts()
+  if (posts.length) {
+    s.push("", "## Writing", "")
+    for (const p of posts)
+      s.push(
+        `- [${p.title}](${SITE_URL}/writing/${p.slug}/) (${TYPE_LABEL[p.type]}, ${p.date}): ${p.summary}`,
+      )
+  }
   s.push(
     "",
     "## Machine-readable versions",
@@ -131,6 +140,16 @@ export function llmsTxt(): string {
       (p) => `- [${p.title}](${p.liveUrl || p.repoUrl || `${SITE_URL}/#work`}): ${p.tagline}`,
     ),
     "",
+    ...(getPosts().length
+      ? [
+          "## Writing",
+          "",
+          ...getPosts().map(
+            (p) => `- [${p.title}](${SITE_URL}/writing/${p.slug}/index.md): ${p.summary}`,
+          ),
+          "",
+        ]
+      : []),
     "## Contact",
     "",
     `- [Email](mailto:${profile.email})`,
@@ -143,4 +162,48 @@ export function llmsTxt(): string {
     "",
   ]
   return s.join("\n")
+}
+
+/** One post as a standalone Markdown document (/writing/<slug>/index.md and its machine view). */
+export function postMarkdown(p: Post): string {
+  return [
+    "---",
+    `title: ${p.title}`,
+    `date: ${p.date}`,
+    `type: ${p.type}`,
+    `tags: [${p.tags.join(", ")}]`,
+    `author: ${profile.name}`,
+    `url: ${SITE_URL}/writing/${p.slug}/`,
+    "---",
+    "",
+    `# ${p.title}`,
+    "",
+    `> ${p.summary}`,
+    "",
+    p.markdown.trim(),
+    "",
+  ].join("\n")
+}
+
+/** /writing/ as Markdown. */
+export function writingIndexMarkdown(): string {
+  const s = [`# Writing by ${profile.name}`, "", "Blog posts and case studies.", ""]
+  for (const p of getPosts()) {
+    s.push(
+      `## [${p.title}](${SITE_URL}/writing/${p.slug}/)`,
+      "",
+      `*${TYPE_LABEL[p.type]} · ${p.date} · ${p.readingMinutes} min*`,
+      "",
+      p.summary,
+      "",
+      `Markdown: ${SITE_URL}/writing/${p.slug}/index.md`,
+      "",
+    )
+  }
+  return s.join("\n")
+}
+
+/** /llms-full.txt: the profile plus every post in full. */
+export function llmsFullTxt(): string {
+  return [profileMarkdown(), ...getPosts().map(postMarkdown)].join("\n\n")
 }
