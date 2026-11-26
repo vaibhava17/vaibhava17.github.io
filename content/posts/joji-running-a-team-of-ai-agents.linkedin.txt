@@ -1,22 +1,19 @@
-I run a small team of AI agents on one Linux server. After 270+ logged changes, the hard problems were never the model.
+I run a team of AI agents on one 4-core server. The agents turned out to be the easy part.
 
-The team is built on Hermes, the open-source agent framework from Nous Research. Joji is the lead: I message her on WhatsApp in plain English. Behind her are engineers that open PRs, a reviewer, a QA agent that tests on staging, an ops agent that reads mail, and a job-hunt agent.
+Joji is my lead agent, built on the open-source Hermes framework. I message her on WhatsApp. Behind her: engineers that open PRs, a reviewer, a QA agent that tests on staging, an ops agent for my inbox, and an opportunity-hunt agent.
 
-Every PR moves through a pipeline: review → fix → staging → QA → ship. The driver between steps is plain Python with no LLM in it. The model is creative inside a step; the plumbing between steps never is.
+After 270+ logged changes, my conclusion: this isn't a collection of agents. It's an operating system for autonomous workers. The engineering that matters is around the agents:
 
-When I categorised every incident in the log, the repeat offenders were:
-→ Hand-offs lost between steps
-→ Stale status: "done" on one screen, "in progress" on another
-→ Loops that look like progress (one PR went through six fix rounds this week)
-→ Alert noise, including a duplicate-message bug that came down to one line saved in the wrong order
-→ OS details, like editing a running bash script and killing a live run
+→ Task state in files, one owner per transition, never in an agent's memory
+→ One-shot runs with a written brief, so every hand-off is explicit
+→ A deterministic driver (no LLM) moving PRs through review → fix → staging → QA → ship
+→ Layered memory: capped shared rules, at most one lesson per run, searchable history
+→ Permissions enforced by tools and caps, not prompts. Understanding an action never means permission to do it. Agents draft; I send.
 
-What I'd tell anyone starting:
-1. Deterministic orchestration, small steps.
-2. Log every change, then actually read the log.
-3. Budget human attention like money. Every message that reaches you should need you.
-4. Expect the boring failures. Fixing them is what makes the system trustworthy.
+Last 14 days: 855 agent runs, 96% finished cleanly. 223 PRs through the pipeline, 90% shipped, 64% with zero fix rounds. And 39% needed me at some point, which is the number I'm working on.
+
+The write-up covers the architecture, the task lifecycle, the security model, three real incidents with root cause and fix, and what I still don't trust agents to do.
 
 Full case study:
 
-#AIAgents #LLM #MultiAgentSystems #AIEngineering #BuildInPublic
+#AIAgents #LLM #MultiAgentSystems #AIEngineering #AISecurity
