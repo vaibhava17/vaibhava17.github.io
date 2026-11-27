@@ -1,0 +1,21 @@
+For most of 2026 I made about 3 commits a week. In 24 of 38 weeks I made none.
+
+Since October my repositories have seen 1,441 commits. The busiest day was 97 commits across 11 repositories. 88 of those were not mine.
+
+They came from the team of AI agents I run on one server. Engineers write the change, a separate reviewer agent gates it, and nothing reaches main without a clean review. Merges into main went from 7 in nine months to 389 in two.
+
+What that volume taught me:
+
+1. Commits are exhaust. Measure what ships and gets verified live, not the commit count.
+2. If agents commit as you, you need attribution. GitHub credited me with all of it until I tagged every commit by who actually made it.
+3. A review loop needs an exit. Cap the fix rounds and send minor leftovers to a backlog, or the loop never ends.
+4. Many writers means stale copies. Pull first, always.
+5. Volume multiplies small bugs, and also makes them visible enough to find.
+
+I write less code by hand than I did in September, and far more of my code reaches production. My job moved to deciding what matters, writing the rules and reviewing the hard calls.
+
+Real charts and the git graph of one change, end to end:
+
+#AIAgents #SoftwareEngineering #DeveloperProductivity #CodeReview #Git
+
+Full write-up:
