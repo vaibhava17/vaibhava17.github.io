@@ -129,6 +129,9 @@
 .post-body th {
   @apply font-semibold text-foreground;
 }
+.post-body img {
+  @apply h-auto w-full rounded-xl;
+}
 .post-body hr {
   @apply my-10 border-border;
 }
