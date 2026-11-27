@@ -14,6 +14,8 @@ What that volume taught me:
 
 I write less code by hand than I did in September, and far more of my code reaches production. My job moved to deciding what matters, writing the rules and reviewing the hard calls.
 
+The scripts are open source (commit-pulse on my GitHub) if you want the same charts for your own history.
+
 Real charts and the git graph of one change, end to end:
 
 #AIAgents #SoftwareEngineering #DeveloperProductivity #CodeReview #Git

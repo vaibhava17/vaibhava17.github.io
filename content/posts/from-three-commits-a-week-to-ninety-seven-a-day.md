@@ -60,4 +60,6 @@ That is why one change produces five to ten commits. The volume is the trail of 
 
 I write less code by hand than I did in September, and far more of my code reaches production. My job has moved to the parts the agents can't own: deciding what matters, writing the rules, reviewing the hard calls and fixing the system when it drifts. The git history is just the most honest record of that shift.
 
+_Run it on your own history:_ the scripts behind these numbers and charts are open source as [commit-pulse](https://github.com/vaibhava17/commit-pulse). It works on any GitHub account or local repositories, you write the rules for who is human, agent or automation, and it is usable by hand or by an AI agent.
+
 _How I counted: default branches of every repository on my account, 1 January to 27 November 2026, from the GitHub API. Merge commits and collaborators' commits excluded. "Agents" means commits made from the agent server's identity; "automation" means scheduled jobs such as backups._
